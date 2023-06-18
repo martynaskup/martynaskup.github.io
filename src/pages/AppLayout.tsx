@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { JSX, useState } from 'react';
 import { Layout } from 'antd';
 import './AppLayout.css';
 import AppSider from '../components/mainLayout/AppSider';
@@ -7,11 +7,16 @@ import AppContent from '../components/mainLayout/AppContent';
 import AppFooter from '../components/mainLayout/AppFooter';
 
 function AppLayout(): JSX.Element {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
     <Layout>
-      <AppSider />
+      <AppSider collapsed={collapsed} onCollapse={setCollapsed} />
       <Layout>
-        <AppHeader />
+        <AppHeader
+          collapsed={collapsed}
+          onMenuOpenerClick={() => setCollapsed(!collapsed)}
+        />
         <AppContent />
         <AppFooter />
       </Layout>
