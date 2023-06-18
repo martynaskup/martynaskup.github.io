@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button, Layout, Space } from 'antd';
+import { Button, Layout, Space, Typography } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 
 const AppHeader: FC<{
@@ -11,7 +11,7 @@ const AppHeader: FC<{
       className="site-layout-sub-header-background"
       style={{ padding: 0 }}
     >
-      <Space>
+      <Space align="baseline">
         <Button
           type="text"
           icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -22,7 +22,9 @@ const AppHeader: FC<{
             height: 64,
           }}
         />
-        HEADER
+        <Typography.Title level={1} style={{ fontSize: '20px' }}>
+          Hello! I'm Martyna, React Developer. Welcome on my page!
+        </Typography.Title>
       </Space>
     </Layout.Header>
   );
