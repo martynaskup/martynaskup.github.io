@@ -1,10 +1,10 @@
 import React, { JSX, useState } from 'react';
 import { Layout } from 'antd';
 import './AppLayout.css';
-import AppSider from '../components/mainLayout/AppSider';
-import AppHeader from '../components/mainLayout/AppHeader';
-import AppContent from '../components/mainLayout/AppContent';
-import AppFooter from '../components/mainLayout/AppFooter';
+import AppSider from './AppSider';
+import AppHeader from './AppHeader';
+import AppContent from './AppContent';
+import AppFooter from './AppFooter';
 import { CollapseType } from 'antd/es/layout/Sider';
 
 function AppLayout(): JSX.Element {
