@@ -11,9 +11,9 @@ export default function AppRoutes() {
         path="/"
         element={<AppLayout />}
         children={[
-          <Route index element={<Home />} />,
-          <Route path="/about" element={<About />} />,
-          <Route path="*" element={<NoRouteMatch />} />,
+          <Route index element={<Home />} key="home" />,
+          <Route path="/about" element={<About />} key="about" />,
+          <Route path="*" element={<NoRouteMatch />} key="noMatch" />,
         ]}
       />
     </Routes>
