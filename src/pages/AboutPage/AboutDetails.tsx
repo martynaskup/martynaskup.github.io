@@ -1,48 +1,9 @@
+import { StyledDetailsSpace } from './About.styles';
+import { Typography } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
-import { Col, Space, Typography } from 'antd';
-import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
-import myImg from '../assets/images/my_pic.jpg';
-import {
-  StyledAboutImage,
-  StyledAboutRow,
-  StyledDetailsSpace,
-} from './About.styles';
 
-const About = () => {
-  const { md } = useBreakpoint();
-
-  const intro = (
-    <>
-      <Typography.Title level={2}>
-        Hello! Hallo! Cześć! and... Ahoj!
-      </Typography.Title>
-      <Typography.Title level={3}>
-        from a Polish front-end developer!
-      </Typography.Title>
-      <Typography.Text>
-        I would like to share with you a bit of information about me, my
-        personal and professional life.
-      </Typography.Text>
-    </>
-  );
-
-  const myImage = (
-    <StyledAboutImage
-      width={250}
-      src={myImg}
-      alt="my picture"
-      placeholder={
-        <StyledAboutImage
-          preview={false}
-          src={myImg}
-          alt="my picture"
-          width={250}
-        />
-      }
-    />
-  );
-
-  const details = (
+const AboutDetails = () => {
+  return (
     <StyledDetailsSpace direction="vertical" size="middle">
       <Typography.Text>
         I've always been passionate about learning and improving my skills.
@@ -88,29 +49,6 @@ const About = () => {
       </Typography.Text>
     </StyledDetailsSpace>
   );
-
-  const main = md ? (
-    <StyledAboutRow
-      justify="center"
-      align="middle"
-      gutter={{ sm: 32, md: 24, lg: 32 }}
-    >
-      <Col>{myImage}</Col>
-      <Col span={14}>{details}</Col>
-    </StyledAboutRow>
-  ) : (
-    <Col>
-      {myImage}
-      {details}
-    </Col>
-  );
-
-  return (
-    <Space direction="vertical" size="middle">
-      {intro}
-      {main}
-    </Space>
-  );
 };
 
-export default About;
+export default AboutDetails;
