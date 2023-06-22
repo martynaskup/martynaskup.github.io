@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import About from '../pages/AboutPage/About';
 import NoRouteMatch from '../pages/NoRouteMatch';
 import AppLayout from '../components/mainLayout/AppLayout';
-import Home from '../pages/Home';
+import Home from '../pages/HomePage/Home';
 import ContactInfo from '../pages/ContactInfo';
 
 export default function AppRoutes() {
