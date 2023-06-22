@@ -1,8 +1,12 @@
 import { SmileOutlined } from '@ant-design/icons';
-import { Col, Image, Space, Typography } from 'antd';
+import { Col, Space, Typography } from 'antd';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import myImg from '../assets/images/my_pic.jpg';
-import { StyledAboutRow, StyledDetailsSpace } from './About.styles';
+import {
+  StyledAboutImage,
+  StyledAboutRow,
+  StyledDetailsSpace,
+} from './About.styles';
 
 const About = () => {
   const { md } = useBreakpoint();
@@ -23,18 +27,23 @@ const About = () => {
   );
 
   const myImage = (
-    <Image
-      width={240}
+    <StyledAboutImage
+      width={250}
       src={myImg}
       alt="my picture"
       placeholder={
-        <Image preview={false} src={myImg} alt="my picture" width={200} />
+        <StyledAboutImage
+          preview={false}
+          src={myImg}
+          alt="my picture"
+          width={250}
+        />
       }
     />
   );
 
   const details = (
-    <StyledDetailsSpace direction="vertical">
+    <StyledDetailsSpace direction="vertical" size="middle">
       <Typography.Text>
         I've always been passionate about learning and improving my skills.
         Challenges are a big part of my life - both personal and professional.
@@ -84,15 +93,13 @@ const About = () => {
     <StyledAboutRow
       justify="center"
       align="middle"
-      gutter={{ sm: 16, md: 24, lg: 32 }}
+      gutter={{ sm: 32, md: 24, lg: 32 }}
     >
-      <Col span={8} style={{ textAlign: 'right' }}>
-        {myImage}
-      </Col>
-      <Col span={12}>{details}</Col>
+      <Col>{myImage}</Col>
+      <Col span={14}>{details}</Col>
     </StyledAboutRow>
   ) : (
-    <Col span={24}>
+    <Col>
       {myImage}
       {details}
     </Col>

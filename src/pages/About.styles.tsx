@@ -1,6 +1,9 @@
 import styled from 'styled-components';
-import { Row, Space } from 'antd';
+import { Image, Row, Space } from 'antd';
 
+export const StyledAboutImage = styled(Image)`
+  padding: 8px;
+`;
 export const StyledAboutRow = styled(Row)`
   padding-top: 16px;
   padding-bottom: 16px;
