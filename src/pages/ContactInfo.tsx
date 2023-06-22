@@ -20,11 +20,13 @@ const ContactInfo = () => {
           </Typography.Text>
           <br />
           <Space size="large">
-            <Link to="https://github.com/snikerslala">
+            <Link
+              to="https://github.com/snikerslala"
+              target="_blank"
+              rel="noopener"
+            >
               <Button
-                type="link"
-                target="_blank"
-                rel="noopener"
+                type="text"
                 size="small"
                 icon={
                   <GithubOutlined style={{ color: 'rgba(0, 0, 0, 0.88)' }} />
@@ -33,11 +35,13 @@ const ContactInfo = () => {
               <br />
               <Typography.Text>GitHub</Typography.Text>
             </Link>
-            <Link to="https://www.linkedin.com/in/martynaskup/">
+            <Link
+              to="https://www.linkedin.com/in/martynaskup/"
+              target="_blank"
+              rel="noopener"
+            >
               <Button
                 type="text"
-                target="_blank"
-                rel="noopener"
                 size="small"
                 icon={
                   <LinkedinOutlined style={{ color: 'rgba(0, 0, 0, 0.88)' }} />
