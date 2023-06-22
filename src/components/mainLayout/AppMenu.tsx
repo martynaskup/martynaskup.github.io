@@ -31,7 +31,7 @@ const AppMenu = () => {
       children: projectItems,
     },
     {
-      label: <Link to="/contact">Contact me</Link>,
+      label: <Link to="/contactMe">Contact me</Link>,
       key: '4',
       icon: <ContactsOutlined />,
     },
