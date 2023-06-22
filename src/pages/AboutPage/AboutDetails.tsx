@@ -41,8 +41,8 @@ const AboutDetails = () => {
         Jazz and West Coast Swing.
         <br />
         I like running. I co-organize running events and I run usually distances
-        of 5 - 15 km, but sometimes 21 km is not enough. Maybe one day, I'll
-        start running marathons...
+        of 5&#8288;&#8211;&#8288;15 km, but sometimes 21 km is not enough. Maybe
+        one day, I'll start running marathons...
         <br />
         And when the time to relax comes, I spend it with my friends or at home
         playing with my lovely cat Lala.
