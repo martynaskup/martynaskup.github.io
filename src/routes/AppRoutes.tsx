@@ -4,6 +4,7 @@ import NoRouteMatch from '../pages/NoRouteMatch';
 import AppLayout from '../components/mainLayout/AppLayout';
 import Home from '../pages/HomePage/Home';
 import ContactInfo from '../pages/ContactInfo';
+import Projects from '../pages/ProjectsPage/Projects';
 
 export default function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ export default function AppRoutes() {
         children={[
           <Route index element={<Home />} key="home" />,
           <Route path="/about" element={<About />} key="about" />,
+          <Route path="/projects" element={<Projects />} key="projects" />,
           <Route
             path="/contactMe"
             element={<ContactInfo />}
