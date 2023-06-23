@@ -15,7 +15,11 @@ type MenuItem = Required<MenuProps>['items'][number];
 const AppMenu = () => {
   const projectItems: MenuItem[] = [
     {
-      label: <Link to={paths.projectsPaths.project1}>Project 1</Link>,
+      label: (
+        <Link to={paths.projectsPaths.previousPortfolio}>
+          Previous Portfolio
+        </Link>
+      ),
       key: '101',
     },
     {

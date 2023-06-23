@@ -2,7 +2,7 @@ const generatePathToProject = (name: string) => `projects/${name}`;
 
 const projectsPaths = {
   base: 'projects',
-  project1: generatePathToProject('project1'),
+  previousPortfolio: generatePathToProject('previousPortfolio'),
   project2: generatePathToProject('project2'),
 };
 

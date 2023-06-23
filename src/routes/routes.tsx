@@ -7,6 +7,7 @@ import ContactInfo from '../pages/ContactInfo';
 import NoRouteMatch from '../pages/NoRouteMatch';
 import paths from './paths';
 import ProjectsInfo from '../pages/ProjectsPage/ProjectsInfo';
+import PreviousPortfolio from '../pages/ProjectsPage/Projects/PreviousPortfolio';
 
 const projectsRoutes: RouteObject[] = [
   {
@@ -14,8 +15,8 @@ const projectsRoutes: RouteObject[] = [
     element: <ProjectsInfo />,
   },
   {
-    path: paths.projectsPaths.project1,
-    element: <> PROJECT 1</>,
+    path: paths.projectsPaths.previousPortfolio,
+    element: <PreviousPortfolio />,
   },
   {
     path: paths.projectsPaths.project2,
