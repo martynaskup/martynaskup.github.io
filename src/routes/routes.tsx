@@ -6,10 +6,26 @@ import Projects from '../pages/ProjectsPage/Projects';
 import ContactInfo from '../pages/ContactInfo';
 import NoRouteMatch from '../pages/NoRouteMatch';
 import paths from './paths';
+import ProjectsInfo from '../pages/ProjectsPage/ProjectsInfo';
+
+const projectsRoutes: RouteObject[] = [
+  {
+    path: paths.projectsPaths.base,
+    element: <ProjectsInfo />,
+  },
+  {
+    path: paths.projectsPaths.project1,
+    element: <> PROJECT 1</>,
+  },
+  {
+    path: paths.projectsPaths.project2,
+    element: <> PROJECT 2</>,
+  },
+];
 
 const routes: RouteObject[] = [
   {
-    path: paths.main,
+    path: paths.base,
     element: <AppLayout />,
     children: [
       {
@@ -21,8 +37,8 @@ const routes: RouteObject[] = [
         element: <About />,
       },
       {
-        path: paths.projects,
         element: <Projects />,
+        children: projectsRoutes,
       },
       {
         path: paths.contactMe,

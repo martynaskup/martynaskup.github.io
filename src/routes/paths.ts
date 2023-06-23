@@ -1,8 +1,16 @@
+const generatePathToProject = (name: string) => `projects/${name}`;
+
+const projectsPaths = {
+  base: 'projects',
+  project1: generatePathToProject('project1'),
+  project2: generatePathToProject('project2'),
+};
+
 const paths = {
-  main: '/',
+  base: '/',
   home: '/',
   about: 'about',
-  projects: 'projects',
+  projectsPaths: projectsPaths,
   contactMe: 'contactMe',
   noRouteMatch: '*',
 };
