@@ -8,6 +8,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import paths from '../../routes/paths';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -18,20 +19,24 @@ const AppMenu = () => {
   ];
 
   const items: MenuItem[] = [
-    { label: <Link to="/">Welcome</Link>, key: '1', icon: <HomeOutlined /> },
     {
-      label: <Link to="/about">About me</Link>,
+      label: <Link to={paths.home}>Welcome</Link>,
+      key: '1',
+      icon: <HomeOutlined />,
+    },
+    {
+      label: <Link to={paths.about}>About me</Link>,
       key: '2',
       icon: <UserOutlined />,
     },
     {
-      label: <Link to="/projects">Projects</Link>,
+      label: <Link to={paths.projects}>Projects</Link>,
       key: 'sub1',
       icon: <ProjectOutlined />,
       children: projectItems,
     },
     {
-      label: <Link to="/contactMe">Contact me</Link>,
+      label: <Link to={paths.contactMe}>Contact me</Link>,
       key: '4',
       icon: <ContactsOutlined />,
     },

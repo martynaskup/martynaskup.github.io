@@ -5,30 +5,31 @@ import About from '../pages/AboutPage/About';
 import Projects from '../pages/ProjectsPage/Projects';
 import ContactInfo from '../pages/ContactInfo';
 import NoRouteMatch from '../pages/NoRouteMatch';
+import paths from './paths';
 
 const routes: RouteObject[] = [
   {
-    path: '/',
+    path: paths.main,
     element: <AppLayout />,
     children: [
       {
-        path: '/',
+        path: paths.home,
         element: <Home />,
       },
       {
-        path: '/about',
+        path: paths.about,
         element: <About />,
       },
       {
-        path: '/projects',
+        path: paths.projects,
         element: <Projects />,
       },
       {
-        path: '/contactMe',
+        path: paths.contactMe,
         element: <ContactInfo />,
       },
       {
-        path: '*',
+        path: paths.noRouteMatch,
         element: <NoRouteMatch />,
       },
     ],
