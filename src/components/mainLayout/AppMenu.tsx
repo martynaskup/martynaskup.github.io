@@ -23,8 +23,12 @@ const AppMenu = () => {
       key: '101',
     },
     {
-      label: <Link to={paths.projectsPaths.project2}>Project 2</Link>,
+      label: <Link to={paths.projectsPaths.budget}>Budget</Link>,
       key: '102',
+    },
+    {
+      label: <Link to={paths.projectsPaths.project2}>Project 2</Link>,
+      key: '103',
     },
   ];
 
