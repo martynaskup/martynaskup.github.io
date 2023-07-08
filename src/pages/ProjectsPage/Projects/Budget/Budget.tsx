@@ -1,6 +1,10 @@
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
-import { Card, Col, Row, Statistic, Typography } from 'antd';
+import { Card, Col, Divider, Row, Statistic, Typography } from 'antd';
 import { StyledStatisticDiv } from './Budget.styles';
+
+const incomes = <>incomes items</>;
+
+const outcomes = <>outcomes items</>;
 
 function Budget() {
   const appTitle = <Typography.Title level={2}>Budget app</Typography.Title>;
@@ -18,6 +22,8 @@ function Budget() {
               prefix={<ArrowUpOutlined />}
               suffix="€"
             />
+            <Divider />
+            {incomes}
           </Card>
         </Col>
         <Col span={12}>
@@ -30,6 +36,8 @@ function Budget() {
               prefix={<ArrowDownOutlined />}
               suffix="€"
             />
+            <Divider />
+            {outcomes}
           </Card>
         </Col>
       </Row>
