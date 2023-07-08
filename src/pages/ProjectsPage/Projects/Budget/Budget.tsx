@@ -1,6 +1,10 @@
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import {
+  ArrowDownOutlined,
+  ArrowUpOutlined,
+  LikeOutlined,
+} from '@ant-design/icons';
 import { Card, Col, Divider, Row, Statistic, Typography } from 'antd';
-import { StyledStatisticDiv } from './Budget.styles';
+import { StyledStatisticDiv, StyledSummaryRow } from './Budget.styles';
 
 const incomes = <>incomes items</>;
 
@@ -8,6 +12,26 @@ const outcomes = <>outcomes items</>;
 
 function Budget() {
   const appTitle = <Typography.Title level={2}>Budget app</Typography.Title>;
+
+  const summary = (
+    <StyledSummaryRow gutter={16} justify="center">
+      <Col span={6}>
+        <Statistic
+          title="left in July"
+          value="1555"
+          suffix="€"
+          prefix={<LikeOutlined />}
+        />
+      </Col>
+      <Col span={6}>
+        <Statistic.Countdown
+          title="days left"
+          value={'2023-07-31'}
+          format="D"
+        />
+      </Col>
+    </StyledSummaryRow>
+  );
 
   const statistic = (
     <StyledStatisticDiv>
@@ -47,6 +71,7 @@ function Budget() {
   return (
     <>
       {appTitle}
+      {summary}
       {statistic}
     </>
   );
