@@ -4,6 +4,9 @@ import { LikeOutlined } from '@ant-design/icons';
 import { StyledSummaryRow } from './Budget.styles';
 
 const Summary: FC = () => {
+  const today = new Date();
+  const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+
   return (
     <StyledSummaryRow gutter={16} justify="center">
       <Col span={6}>
@@ -17,7 +20,7 @@ const Summary: FC = () => {
       <Col span={6}>
         <Statistic.Countdown
           title="days left"
-          value={'2023-07-31'}
+          value={lastDayOfMonth.toString()}
           format="D"
         />
       </Col>
