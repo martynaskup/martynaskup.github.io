@@ -3,7 +3,7 @@ import { Col, Statistic } from 'antd';
 import { LikeOutlined } from '@ant-design/icons';
 import { StyledSummaryRow } from './Budget.styles';
 
-const Summary: FC = () => {
+const Summary: FC<{ sum: number }> = ({ sum }) => {
   const today = new Date();
   const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 
@@ -12,7 +12,7 @@ const Summary: FC = () => {
       <Col span={6}>
         <Statistic
           title="left in July"
-          value="1555"
+          value={sum}
           suffix="€"
           prefix={<LikeOutlined />}
         />
