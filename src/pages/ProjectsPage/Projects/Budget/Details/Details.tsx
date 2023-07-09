@@ -16,6 +16,9 @@ const Details: FC<{ onValuesChange: (values: number) => void }> = ({
     onValuesChange(sum);
   }, [incomes, outcomes, onValuesChange]);
 
+  const handleIncomeChange = (newIncomeTotal: number) =>
+    setIncomes(newIncomeTotal);
+
   return (
     <StyledDetailsDiv>
       <Row gutter={16}>
@@ -30,7 +33,7 @@ const Details: FC<{ onValuesChange: (values: number) => void }> = ({
               suffix="€"
             />
             <Divider />
-            <Incomes onValuesChange={setIncomes} />
+            <Incomes onValuesChange={handleIncomeChange} />
           </Card>
         </Col>
         <Col span={12}>
