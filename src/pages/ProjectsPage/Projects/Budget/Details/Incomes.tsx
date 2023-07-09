@@ -26,29 +26,43 @@ const Incomes: FC<{
     {
       name: 'salary',
       price: 2000,
-      date: '2023-07-02',
+      date: '2023-07-03',
     },
     {
       name: 'lottery',
       price: 500,
-      date: '2023-07-10',
+      date: '2023-07-15',
     },
   ];
 
   const [incomeList, setIncomeList] = useState(initialIncomes);
 
   const handleNewIncome = (income: IncomeData) => {
-    setIncomeList((prevIncomesList) => [...prevIncomesList, income]);
+    setIncomeList((prevIncomesList) => {
+      const newIncomeList = [...prevIncomesList, income];
+      return sortIncomeList(newIncomeList);
+    });
+
     onValuesChange(income.price);
   };
 
   return (
-    <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
-      <Collapse.Panel header="Income items" key="1">
-        <IncomeList incomeList={incomeList} />
-      </Collapse.Panel>
-    </Collapse>
+    <>
+      <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
+        <Collapse.Panel header="Income items" key="1">
+          <IncomeList incomeList={sortIncomeList(incomeList)} />
+        </Collapse.Panel>
+      </Collapse>
+    </>
   );
 };
 
+const sortIncomeList = (list: IncomeData[]) => {
+  const dateNumber = (date: string) => new Date(date);
+
+  return list.sort(
+    (incomeA, incomeB) =>
+      dateNumber(incomeB.date).getTime() - dateNumber(incomeA.date).getTime()
+  );
+};
 export default Incomes;
