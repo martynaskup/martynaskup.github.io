@@ -1,6 +1,7 @@
 import { Collapse } from 'antd';
 import { FC, useEffect, useState } from 'react';
 import IncomeList from './IncomeList';
+import AddButtonAndModal from './AddButtonAndModal';
 
 export type IncomeData = {
   name: string;
@@ -56,7 +57,11 @@ const Incomes: FC<{
   return (
     <>
       <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
-        <Collapse.Panel header="Income items" key="1">
+        <Collapse.Panel
+          header="Income items"
+          key="1"
+          extra={<AddButtonAndModal />}
+        >
           <IncomeList incomeList={sortIncomeList(incomeList)} />
         </Collapse.Panel>
       </Collapse>
