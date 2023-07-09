@@ -1,6 +1,8 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
-const Outcomes: FC = () => {
+const Outcomes: FC<{
+  onValuesChange: Dispatch<SetStateAction<number>>;
+}> = () => {
   return <>outcomes items</>;
 };
 

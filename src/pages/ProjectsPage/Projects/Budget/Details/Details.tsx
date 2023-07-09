@@ -1,11 +1,21 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import { StyledDetailsDiv } from '../Budget.styles';
 import { Card, Col, Divider, Row, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import Incomes from './Incomes';
 import Outcomes from './Outcomes';
 
-const Details: FC = () => {
+const Details: FC<{ onValuesChange: Dispatch<SetStateAction<number>> }> = ({
+  onValuesChange,
+}) => {
+  const [incomes, setIncomes] = useState(0);
+  const [outcomes, setOutcomes] = useState(0);
+
+  useEffect(() => {
+    const sum = incomes - outcomes;
+    onValuesChange(sum);
+  }, [incomes, outcomes]);
+
   return (
     <StyledDetailsDiv>
       <Row gutter={16}>
@@ -13,28 +23,28 @@ const Details: FC = () => {
           <Card>
             <Statistic
               title="Cash in"
-              value={1100.28}
+              value={incomes}
               precision={2}
               valueStyle={{ color: '#3f8600' }}
               prefix={<ArrowUpOutlined />}
               suffix="€"
             />
             <Divider />
-            <Incomes />
+            <Incomes onValuesChange={setIncomes} />
           </Card>
         </Col>
         <Col span={12}>
           <Card>
             <Statistic
               title="Cash out"
-              value={19.3}
+              value={outcomes}
               precision={2}
               valueStyle={{ color: '#cf1322' }}
               prefix={<ArrowDownOutlined />}
               suffix="€"
             />
             <Divider />
-            <Outcomes />
+            <Outcomes onValuesChange={setOutcomes} />
           </Card>
         </Col>
       </Row>

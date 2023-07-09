@@ -12,7 +12,7 @@ function Budget() {
     <>
       {appTitle}
       <Summary sum={sum} />
-      <Details />
+      <Details onValuesChange={setSum} />
     </>
   );
 }
