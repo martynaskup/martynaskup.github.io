@@ -1,11 +1,11 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { StyledDetailsDiv } from '../Budget.styles';
 import { Card, Col, Divider, Row, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import Incomes from './Incomes';
 import Outcomes from './Outcomes';
 
-const Details: FC<{ onValuesChange: Dispatch<SetStateAction<number>> }> = ({
+const Details: FC<{ onValuesChange: (values: number) => void }> = ({
   onValuesChange,
 }) => {
   const [incomes, setIncomes] = useState(0);
@@ -14,7 +14,7 @@ const Details: FC<{ onValuesChange: Dispatch<SetStateAction<number>> }> = ({
   useEffect(() => {
     const sum = incomes - outcomes;
     onValuesChange(sum);
-  }, [incomes, outcomes]);
+  }, [incomes, outcomes, onValuesChange]);
 
   return (
     <StyledDetailsDiv>
