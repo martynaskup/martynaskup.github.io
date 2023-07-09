@@ -1,7 +1,8 @@
-import { Collapse, List, Typography } from 'antd';
+import { Collapse } from 'antd';
 import { FC, useState } from 'react';
+import IncomeList from './IncomeList';
 
-type IncomeData = {
+export type IncomeData = {
   name: string;
   price: number;
   date: string;
@@ -34,32 +35,17 @@ const Incomes: FC<{
     },
   ];
 
-  const [incomesList, setIncomesList] = useState(initialIncomes);
+  const [incomeList, setIncomeList] = useState(initialIncomes);
 
   const handleNewIncome = (income: IncomeData) => {
-    setIncomesList((prevIncomesList) => [...prevIncomesList, income]);
+    setIncomeList((prevIncomesList) => [...prevIncomesList, income]);
     onValuesChange(income.price);
   };
-
-  const IncomeList = () => (
-    <List
-      size="small"
-      dataSource={incomesList}
-      renderItem={(item) => (
-        <List.Item actions={[<Typography.Text>Edit</Typography.Text>]}>
-          <List.Item.Meta
-            title={`${item.name} - ${item.price} €`}
-            description={`Received date: ${item.date}`}
-          />
-        </List.Item>
-      )}
-    />
-  );
 
   return (
     <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
       <Collapse.Panel header="Income items" key="1">
-        <IncomeList />
+        <IncomeList incomeList={incomeList} />
       </Collapse.Panel>
     </Collapse>
   );
