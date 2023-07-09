@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import { StyledDetailsDiv } from '../Budget.styles';
 import { Card, Col, Divider, Row, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
@@ -16,8 +16,10 @@ const Details: FC<{ onValuesChange: (values: number) => void }> = ({
     onValuesChange(sum);
   }, [incomes, outcomes, onValuesChange]);
 
-  const handleIncomeChange = (newIncomeTotal: number) =>
-    setIncomes(newIncomeTotal);
+  const handleIncomeChange = useCallback(
+    (newIncomeTotal: number) => setIncomes(newIncomeTotal),
+    []
+  );
 
   return (
     <StyledDetailsDiv>

@@ -1,5 +1,5 @@
 import { Collapse } from 'antd';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import IncomeList from './IncomeList';
 
 export type IncomeData = {
@@ -36,6 +36,13 @@ const Incomes: FC<{
   ];
 
   const [incomeList, setIncomeList] = useState(initialIncomes);
+
+  useEffect(() => {
+    const totalIncome = incomeList.reduce((acc, income) => {
+      return acc + income.price;
+    }, 0);
+    onValuesChange(totalIncome);
+  }, [incomeList, onValuesChange]);
 
   const handleNewIncome = (income: IncomeData) => {
     setIncomeList((prevIncomesList) => {
