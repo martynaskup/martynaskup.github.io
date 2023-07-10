@@ -25,19 +25,20 @@ const AddIncomeForm: FC<{
   return (
     <Formik<IncomeData>
       initialValues={initialValues}
-      onSubmit={(values, formikHelpers) => {
+      onSubmit={(values) => {
         onFormSubmit({
           name: values.name,
           price: values.price,
           date: moment(values.date) ?? moment(),
         });
-        formikHelpers.resetForm();
         hideModal();
       }}
       validationSchema={addIncomeFormValidationSchema}
     >
       {(props) => (
-        <Form>
+        <Form
+          preserve={false} // required when setting destroyOnClose in Modal component if Modal is used with Form in order to reset the values
+        >
           <Form.Item name="name" label="Income title">
             <Input name="name" placeholder="income name" suffix={<span />} />
           </Form.Item>
@@ -51,14 +52,7 @@ const AddIncomeForm: FC<{
             <SubmitButton onSubmit={() => props.submitForm()}>
               Add income
             </SubmitButton>
-            <Button
-              onClick={() => {
-                props.resetForm();
-                hideModal();
-              }}
-            >
-              Cancel
-            </Button>
+            <Button onClick={hideModal}>Cancel</Button>
           </Space>
         </Form>
       )}

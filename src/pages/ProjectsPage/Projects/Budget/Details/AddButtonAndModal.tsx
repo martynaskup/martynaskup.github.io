@@ -39,7 +39,7 @@ const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
   return (
     <div onClick={(event) => event.stopPropagation()}>
       <AddButton />
-      <Modal title="Add income" open={isModalOpen} footer={null}>
+      <Modal title="Add income" open={isModalOpen} footer={null} destroyOnClose>
         <AddIncomeForm
           onFormSubmit={(income) => {
             onAction(income);
