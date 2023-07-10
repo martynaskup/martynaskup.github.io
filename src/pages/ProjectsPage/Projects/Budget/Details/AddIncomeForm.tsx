@@ -43,7 +43,15 @@ const AddIncomeForm: FC<{
             <Input name="name" placeholder="income name" suffix={<span />} />
           </Form.Item>
           <Form.Item name="price" label="Price">
-            <InputNumber name="price" formatter={(value) => `${value} €`} />
+            <InputNumber
+              name="price"
+              precision={2}
+              step={0.01}
+              style={{
+                width: '150px',
+              }}
+              addonAfter="€"
+            />
           </Form.Item>
           <Form.Item name="date" label="Date of the income">
             <DatePicker name="date" allowClear={false} />
