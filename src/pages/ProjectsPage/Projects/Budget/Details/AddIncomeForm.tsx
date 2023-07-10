@@ -6,15 +6,16 @@ import {
   Form,
   Input,
   InputNumber,
-  ResetButton,
   SubmitButton,
 } from 'formik-antd';
 import moment from 'moment';
 import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
+import { Button, Space } from 'antd';
 
-const AddIncomeForm: FC<{ onSubmit: (income: IncomeData) => void }> = ({
-  onSubmit,
-}) => {
+const AddIncomeForm: FC<{
+  onFormSubmit: (income: IncomeData) => void;
+  hideModal: () => void;
+}> = ({ onFormSubmit, hideModal }) => {
   const initialValues: IncomeData = {
     name: '',
     date: moment(),
@@ -24,7 +25,15 @@ const AddIncomeForm: FC<{ onSubmit: (income: IncomeData) => void }> = ({
   return (
     <Formik<IncomeData>
       initialValues={initialValues}
-      onSubmit={onSubmit}
+      onSubmit={(values, formikHelpers) => {
+        onFormSubmit({
+          name: values.name,
+          price: values.price,
+          date: moment(values.date) ?? moment(),
+        });
+        formikHelpers.resetForm();
+        hideModal();
+      }}
       validationSchema={addIncomeFormValidationSchema}
     >
       {(props) => (
@@ -36,8 +45,21 @@ const AddIncomeForm: FC<{ onSubmit: (income: IncomeData) => void }> = ({
             <InputNumber name="price" formatter={(value) => `${value} €`} />
           </Form.Item>
           <Form.Item name="date" label="Date of the income">
-            <DatePicker name="date" />
+            <DatePicker name="date" allowClear={false} />
           </Form.Item>
+          <Space style={{ width: '100%', justifyContent: 'end' }}>
+            <SubmitButton onSubmit={() => props.submitForm()}>
+              Add income
+            </SubmitButton>
+            <Button
+              onClick={() => {
+                props.resetForm();
+                hideModal();
+              }}
+            >
+              Cancel
+            </Button>
+          </Space>
         </Form>
       )}
     </Formik>

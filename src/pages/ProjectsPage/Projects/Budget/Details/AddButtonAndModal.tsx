@@ -11,16 +11,8 @@ const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
   const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
+  const showModal = (show: boolean) => {
+    setIsModalOpen(show);
   };
 
   const AddButton = () =>
@@ -29,7 +21,7 @@ const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
         type="dashed"
         size="small"
         icon={<PlusCircleOutlined />}
-        onClick={showModal}
+        onClick={() => showModal(true)}
       >
         Add income
       </Button>
@@ -39,7 +31,7 @@ const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
           type="text"
           size="small"
           icon={<PlusCircleOutlined />}
-          onClick={showModal}
+          onClick={() => showModal(true)}
         />
       </Tooltip>
     );
@@ -47,13 +39,13 @@ const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
   return (
     <div onClick={(event) => event.stopPropagation()}>
       <AddButton />
-      <Modal
-        title="Add income"
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
-        <AddIncomeForm onSubmit={onAction} />
+      <Modal title="Add income" open={isModalOpen} footer={null}>
+        <AddIncomeForm
+          onFormSubmit={(income) => {
+            onAction(income);
+          }}
+          hideModal={() => showModal(false)}
+        />
       </Modal>
     </div>
   );
