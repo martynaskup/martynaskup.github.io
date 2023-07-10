@@ -6,7 +6,7 @@ import AddButtonAndModal from './AddButtonAndModal';
 
 export type IncomeData = {
   name: string;
-  price: number;
+  value: number;
   date: Moment;
 };
 
@@ -17,22 +17,22 @@ const Incomes: FC<{
     // TODO - initial values should come the data from LocalStorage or be fetched from an external database
     {
       name: 'salary',
-      price: 2000,
+      value: 2000,
       date: moment('2023-07-02'),
     },
     {
       name: 'lottery',
-      price: 500,
+      value: 500,
       date: moment('2023-07-10'),
     },
     {
       name: 'salary',
-      price: 2000,
+      value: 2000,
       date: moment('2023-07-03'),
     },
     {
       name: 'lottery',
-      price: 500,
+      value: 500,
       date: moment('2023-07-15'),
     },
   ];
@@ -41,7 +41,7 @@ const Incomes: FC<{
 
   useEffect(() => {
     const totalIncome = incomeList.reduce((acc, income) => {
-      return acc + income.price;
+      return acc + income.value;
     }, 0);
     onValuesChange(totalIncome);
   }, [incomeList, onValuesChange]);
@@ -52,7 +52,7 @@ const Incomes: FC<{
       return sortIncomeList(newIncomeList);
     });
 
-    onValuesChange(income.price);
+    onValuesChange(income.value);
   };
 
   return (

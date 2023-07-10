@@ -19,7 +19,7 @@ const AddIncomeForm: FC<{
   const initialValues: IncomeData = {
     name: '',
     date: moment(),
-    price: 0,
+    value: 0,
   };
 
   return (
@@ -28,7 +28,7 @@ const AddIncomeForm: FC<{
       onSubmit={(values) => {
         onFormSubmit({
           name: values.name,
-          price: values.price,
+          value: values.value,
           date: moment(values.date) ?? moment(),
         });
         hideModal();
@@ -42,9 +42,9 @@ const AddIncomeForm: FC<{
           <Form.Item name="name" label="Income title">
             <Input name="name" placeholder="income name" suffix={<span />} />
           </Form.Item>
-          <Form.Item name="price" label="Price">
+          <Form.Item name="value" label="Value">
             <InputNumber
-              name="price"
+              name="value"
               precision={2}
               step={0.01}
               style={{
