@@ -61,7 +61,7 @@ const Incomes: FC<{
         <Collapse.Panel
           header="Income items"
           key="1"
-          extra={<AddButtonAndModal />}
+          extra={<AddButtonAndModal onAction={handleNewIncome} />}
         >
           <IncomeList incomeList={sortIncomeList(incomeList)} />
         </Collapse.Panel>

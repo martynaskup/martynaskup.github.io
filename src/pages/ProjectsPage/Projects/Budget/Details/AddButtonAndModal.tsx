@@ -1,47 +1,61 @@
-import { Button, Modal } from 'antd';
+import { FC, useState } from 'react';
+import { Button, Modal, Tooltip } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { IncomeData } from './Incomes';
+import AddIncomeForm from './AddIncomeForm';
+import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
-const AddButtonAndModal = () => {
+const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
+  onAction,
+}) => {
+  const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const showModal = () => {
     setIsModalOpen(true);
-    event.stopPropagation();
   };
 
-  const handleOk = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const handleOk = () => {
     setIsModalOpen(false);
-    event.stopPropagation();
   };
 
-  const handleCancel = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const handleCancel = () => {
     setIsModalOpen(false);
-    event.stopPropagation();
   };
 
-  return (
-    <>
+  const AddButton = () =>
+    lg ? (
       <Button
-        type="text"
+        type="dashed"
         size="small"
         icon={<PlusCircleOutlined />}
-        onClick={(event) => {
-          showModal(event);
-          // event.stopPropagation();
-        }}
+        onClick={showModal}
       >
         Add income
       </Button>
+    ) : (
+      <Tooltip title="Add income">
+        <Button
+          type="text"
+          size="small"
+          icon={<PlusCircleOutlined />}
+          onClick={showModal}
+        />
+      </Tooltip>
+    );
+
+  return (
+    <div onClick={(event) => event.stopPropagation()}>
+      <AddButton />
       <Modal
         title="Add income"
         open={isModalOpen}
-        onOk={(event) => handleOk(event)}
-        onCancel={(event) => handleCancel(event)}
+        onOk={handleOk}
+        onCancel={handleCancel}
       >
-        here comes the form to add an income
+        <AddIncomeForm onSubmit={onAction} />
       </Modal>
-    </>
+    </div>
   );
 };
 
