@@ -14,6 +14,7 @@
     "antd": "^4.24.10",
     "formik": "^2.4.2",
     "formik-antd": "^2.0.4",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.13.0",
