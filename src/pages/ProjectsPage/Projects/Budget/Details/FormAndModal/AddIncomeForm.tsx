@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Formik } from 'formik';
-import { IncomeData } from './Incomes';
+import { IncomeData } from '../Incomes';
 import {
   DatePicker,
   Form,
@@ -9,8 +9,8 @@ import {
   SubmitButton,
 } from 'formik-antd';
 import moment from 'moment';
-import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
 import { Button, Space } from 'antd';
+import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
 
 const AddIncomeForm: FC<{
   onFormSubmit: (income: IncomeData) => void;

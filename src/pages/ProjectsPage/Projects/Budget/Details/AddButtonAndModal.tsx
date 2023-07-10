@@ -1,12 +1,12 @@
 import { FC, useState } from 'react';
-import { Button, Modal, Tooltip } from 'antd';
+import { Button, Tooltip } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { IncomeData } from './Incomes';
-import AddIncomeForm from './AddIncomeForm';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
+import IncomeModal from './FormAndModal/IncomeModal';
 
-const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
-  onAction,
+const AddButtonAndModal: FC<{ onNewIncome: (income: IncomeData) => void }> = ({
+  onNewIncome,
 }) => {
   const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,14 +39,11 @@ const AddButtonAndModal: FC<{ onAction: (income: IncomeData) => void }> = ({
   return (
     <div onClick={(event) => event.stopPropagation()}>
       <AddButton />
-      <Modal title="Add income" open={isModalOpen} footer={null} destroyOnClose>
-        <AddIncomeForm
-          onFormSubmit={(income) => {
-            onAction(income);
-          }}
-          hideModal={() => showModal(false)}
-        />
-      </Modal>
+      <IncomeModal
+        isModalOpen={isModalOpen}
+        showModal={showModal}
+        onNewIncome={onNewIncome}
+      />
     </div>
   );
 };
