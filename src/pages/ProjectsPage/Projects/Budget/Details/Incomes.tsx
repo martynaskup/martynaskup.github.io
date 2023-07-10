@@ -1,12 +1,13 @@
-import { Collapse } from 'antd';
 import { FC, useEffect, useState } from 'react';
+import { Collapse } from 'antd';
+import moment, { Moment } from 'moment';
 import IncomeList from './IncomeList';
 import AddButtonAndModal from './AddButtonAndModal';
 
 export type IncomeData = {
   name: string;
   price: number;
-  date: string;
+  date: Moment;
 };
 
 const Incomes: FC<{
@@ -17,22 +18,22 @@ const Incomes: FC<{
     {
       name: 'salary',
       price: 2000,
-      date: '2023-07-02',
+      date: moment('2023-07-02'),
     },
     {
       name: 'lottery',
       price: 500,
-      date: '2023-07-10',
+      date: moment('2023-07-10'),
     },
     {
       name: 'salary',
       price: 2000,
-      date: '2023-07-03',
+      date: moment('2023-07-03'),
     },
     {
       name: 'lottery',
       price: 500,
-      date: '2023-07-15',
+      date: moment('2023-07-15'),
     },
   ];
 
@@ -70,11 +71,8 @@ const Incomes: FC<{
 };
 
 const sortIncomeList = (list: IncomeData[]) => {
-  const dateNumber = (date: string) => new Date(date);
-
-  return list.sort(
-    (incomeA, incomeB) =>
-      dateNumber(incomeB.date).getTime() - dateNumber(incomeA.date).getTime()
+  return list.sort((incomeA, incomeB) =>
+    incomeB.date.isBefore(incomeA.date) ? 1 : -1
   );
 };
 export default Incomes;

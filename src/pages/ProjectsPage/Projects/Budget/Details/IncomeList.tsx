@@ -10,7 +10,7 @@ const IncomeList: FC<{ incomeList: IncomeData[] }> = ({ incomeList }) => (
       <List.Item actions={[<Typography.Text>Edit</Typography.Text>]}>
         <List.Item.Meta
           title={`${item.name} - ${item.price} €`}
-          description={`Received date: ${item.date}`}
+          description={`Received date: ${item.date.format('DD-MM-YYYY')}`}
         />
       </List.Item>
     )}
