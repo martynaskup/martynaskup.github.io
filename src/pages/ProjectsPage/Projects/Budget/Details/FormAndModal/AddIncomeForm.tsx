@@ -12,10 +12,17 @@ import moment from 'moment';
 import { Button, Space } from 'antd';
 import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
 
-const AddIncomeForm: FC<{
+type AddIncomeFormProps = {
   onFormSubmit: (income: IncomeData) => void;
   hideModal: () => void;
-}> = ({ onFormSubmit, hideModal }) => {
+  values?: IncomeData;
+};
+
+const AddIncomeForm: FC<AddIncomeFormProps> = ({
+  onFormSubmit,
+  hideModal,
+  values,
+}) => {
   const initialValues: IncomeData = {
     name: '',
     date: moment(),
@@ -24,7 +31,7 @@ const AddIncomeForm: FC<{
 
   return (
     <Formik<IncomeData>
-      initialValues={initialValues}
+      initialValues={values ?? initialValues}
       onSubmit={(values) => {
         onFormSubmit({
           name: values.name,
