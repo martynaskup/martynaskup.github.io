@@ -1,8 +1,16 @@
 import { FC } from 'react';
 import { Formik } from 'formik';
 import { IncomeData } from './Incomes';
-import { DatePicker, Form, Input, InputNumber } from 'formik-antd';
+import {
+  DatePicker,
+  Form,
+  Input,
+  InputNumber,
+  ResetButton,
+  SubmitButton,
+} from 'formik-antd';
 import moment from 'moment';
+import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
 
 const AddIncomeForm: FC<{ onSubmit: (income: IncomeData) => void }> = ({
   onSubmit,
@@ -14,7 +22,11 @@ const AddIncomeForm: FC<{ onSubmit: (income: IncomeData) => void }> = ({
   };
 
   return (
-    <Formik<IncomeData> initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik<IncomeData>
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={addIncomeFormValidationSchema}
+    >
       {(props) => (
         <Form>
           <Form.Item name="name" label="Income title">
