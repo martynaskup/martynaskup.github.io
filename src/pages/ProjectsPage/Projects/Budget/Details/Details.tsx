@@ -21,6 +21,11 @@ const Details: FC<{ onValuesChange: (values: number) => void }> = ({
     []
   );
 
+  const handleOutcomeChange = useCallback(
+    (newOutcomeTotal: number) => setOutcomes(newOutcomeTotal),
+    []
+  );
+
   return (
     <StyledDetailsDiv>
       <Row gutter={16}>
@@ -49,7 +54,7 @@ const Details: FC<{ onValuesChange: (values: number) => void }> = ({
               suffix="€"
             />
             <Divider />
-            <Outcomes onValuesChange={setOutcomes} />
+            <Outcomes onValuesChange={handleOutcomeChange} />
           </Card>
         </Col>
       </Row>

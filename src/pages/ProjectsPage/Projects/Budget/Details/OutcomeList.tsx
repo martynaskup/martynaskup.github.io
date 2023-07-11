@@ -1,19 +1,22 @@
 import { FC, useState } from 'react';
 import { Button, List, Tooltip } from 'antd';
-import { IncomeData } from './Incomes';
+import { OutcomeData } from './Outcomes';
 import { EditOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
 
-type IncomeListProps = {
-  incomeList: IncomeData[];
-  onIncomeUpdate: (updatedIncome: IncomeData) => void;
+type OutcomeListProps = {
+  outcomeList: OutcomeData[];
+  onOutcomeUpdate: (updatedOutcome: OutcomeData) => void;
 };
-const IncomeList: FC<IncomeListProps> = ({ incomeList, onIncomeUpdate }) => {
+const OutcomeList: FC<OutcomeListProps> = ({
+  outcomeList,
+  onOutcomeUpdate,
+}) => {
   const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [incomeForUpdate, setIncomeForUpdate] = useState<
-    IncomeData | undefined
+  const [outcomeForUpdate, setOutcomeForUpdate] = useState<
+    OutcomeData | undefined
   >(undefined);
 
   const showModal = (show: boolean) => {
@@ -24,7 +27,7 @@ const IncomeList: FC<IncomeListProps> = ({ incomeList, onIncomeUpdate }) => {
     <>
       <List
         size="small"
-        dataSource={incomeList}
+        dataSource={outcomeList}
         renderItem={(item) => (
           <List.Item
             style={{ paddingRight: 0 }}
@@ -36,7 +39,7 @@ const IncomeList: FC<IncomeListProps> = ({ incomeList, onIncomeUpdate }) => {
                     icon={<EditOutlined />}
                     onClick={() => {
                       showModal(true);
-                      setIncomeForUpdate(item);
+                      setOutcomeForUpdate(item);
                     }}
                   >
                     Edit
@@ -48,7 +51,7 @@ const IncomeList: FC<IncomeListProps> = ({ incomeList, onIncomeUpdate }) => {
                       icon={<EditOutlined />}
                       onClick={() => {
                         showModal(true);
-                        setIncomeForUpdate(item);
+                        setOutcomeForUpdate(item);
                       }}
                     />
                   </Tooltip>
@@ -66,15 +69,15 @@ const IncomeList: FC<IncomeListProps> = ({ incomeList, onIncomeUpdate }) => {
       />
       {isModalOpen && (
         <IncomeOutcomeModal
-          type="income"
+          type="outcome"
           isModalOpen={isModalOpen}
-          onModalSubmit={onIncomeUpdate}
+          onModalSubmit={onOutcomeUpdate}
           hideModal={() => showModal(false)}
-          values={incomeForUpdate}
+          values={outcomeForUpdate}
         />
       )}
     </>
   );
 };
 
-export default IncomeList;
+export default OutcomeList;

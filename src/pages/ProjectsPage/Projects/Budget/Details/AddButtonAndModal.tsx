@@ -3,7 +3,7 @@ import { Button, Tooltip } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { IncomeData } from './Incomes';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
-import IncomeModal from './FormAndModal/IncomeModal';
+import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
 
 const AddButtonAndModal: FC<{ onNewIncome: (income: IncomeData) => void }> = ({
   onNewIncome,
@@ -39,10 +39,11 @@ const AddButtonAndModal: FC<{ onNewIncome: (income: IncomeData) => void }> = ({
   return (
     <div onClick={(event) => event.stopPropagation()}>
       <AddButton />
-      <IncomeModal
+      <IncomeOutcomeModal
         isModalOpen={isModalOpen}
         hideModal={() => showModal(false)}
-        onIncomeSubmit={onNewIncome}
+        onModalSubmit={onNewIncome}
+        type="income"
       />
     </div>
   );

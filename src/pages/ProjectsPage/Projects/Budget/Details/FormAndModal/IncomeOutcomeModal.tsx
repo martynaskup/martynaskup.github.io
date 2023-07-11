@@ -2,31 +2,34 @@ import { Modal } from 'antd';
 import AddIncomeForm from './AddIncomeForm';
 import { FC } from 'react';
 import { IncomeData } from '../Incomes';
+import { OutcomeData } from '../Outcomes';
 
-type IncomeModalProps = {
+type IncomeOutcomeModalProps = {
   isModalOpen: boolean;
-  onIncomeSubmit: (income: IncomeData) => void;
+  onModalSubmit: (income: IncomeData | OutcomeData) => void;
   hideModal: () => void;
   values?: IncomeData;
+  type: 'income' | 'outcome';
 };
 
-const IncomeModal: FC<IncomeModalProps> = ({
+const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
   isModalOpen,
-  onIncomeSubmit,
+  onModalSubmit,
   hideModal,
   values,
+  type,
 }) => {
   const isInEditMode = !!values;
   return (
     <Modal
-      title={`${isInEditMode ? 'Update' : 'Add'} income`}
+      title={`${isInEditMode ? 'Update' : 'Add'} ${type}`}
       open={isModalOpen}
       footer={null}
       destroyOnClose
     >
       <AddIncomeForm
         onFormSubmit={(income) => {
-          onIncomeSubmit(income);
+          onModalSubmit(income);
         }}
         hideModal={hideModal}
         values={values}
@@ -35,4 +38,4 @@ const IncomeModal: FC<IncomeModalProps> = ({
   );
 };
 
-export default IncomeModal;
+export default IncomeOutcomeModal;
