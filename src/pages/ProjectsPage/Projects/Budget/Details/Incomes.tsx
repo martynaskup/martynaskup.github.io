@@ -63,6 +63,15 @@ const Incomes: FC<{
     onValuesChange(income.value);
   };
 
+  const handleIncomeUpdate = (updatedIncome: IncomeData) => {
+    setIncomeList((prevIncomeList) => {
+      return prevIncomeList.map((income) =>
+        income.id === updatedIncome.id ? updatedIncome : income
+      );
+    });
+    onValuesChange(updatedIncome.value);
+  };
+
   return (
     <>
       <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
@@ -71,7 +80,10 @@ const Incomes: FC<{
           key="1"
           extra={<AddButtonAndModal onNewIncome={handleNewIncome} />}
         >
-          <IncomeList incomeList={sortIncomeList(incomeList)} />
+          <IncomeList
+            incomeList={sortIncomeList(incomeList)}
+            onIncomeUpdate={handleIncomeUpdate}
+          />
         </Collapse.Panel>
       </Collapse>
     </>

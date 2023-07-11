@@ -41,8 +41,8 @@ const AddButtonAndModal: FC<{ onNewIncome: (income: IncomeData) => void }> = ({
       <AddButton />
       <IncomeModal
         isModalOpen={isModalOpen}
-        showModal={showModal}
-        onNewIncome={onNewIncome}
+        hideModal={() => showModal(false)}
+        onIncomeSubmit={onNewIncome}
       />
     </div>
   );

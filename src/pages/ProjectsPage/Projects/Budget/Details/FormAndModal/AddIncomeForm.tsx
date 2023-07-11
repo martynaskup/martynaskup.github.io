@@ -31,12 +31,13 @@ const AddIncomeForm: FC<AddIncomeFormProps> = ({
     value: 0,
   };
 
+  const isInEditMode = !!values;
   return (
     <Formik<IncomeData>
       initialValues={values ?? initialValues}
       onSubmit={(values) => {
         onFormSubmit({
-          id: uuidv4(),
+          id: isInEditMode ? values.id : uuidv4(),
           name: values.name,
           value: values.value,
           date: moment(values.date) ?? moment(),
@@ -68,7 +69,7 @@ const AddIncomeForm: FC<AddIncomeFormProps> = ({
           </Form.Item>
           <Space style={{ width: '100%', justifyContent: 'end' }}>
             <SubmitButton onSubmit={() => props.submitForm()}>
-              Add income
+              {`${isInEditMode ? 'Update' : 'Add'} income`}
             </SubmitButton>
             <Button onClick={hideModal}>Cancel</Button>
           </Space>

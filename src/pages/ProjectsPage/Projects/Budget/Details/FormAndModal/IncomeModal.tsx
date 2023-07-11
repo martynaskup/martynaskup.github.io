@@ -5,24 +5,30 @@ import { IncomeData } from '../Incomes';
 
 type IncomeModalProps = {
   isModalOpen: boolean;
-  onNewIncome: (income: IncomeData) => void;
-  showModal: (show: boolean) => void;
+  onIncomeSubmit: (income: IncomeData) => void;
+  hideModal: () => void;
   values?: IncomeData;
 };
 
 const IncomeModal: FC<IncomeModalProps> = ({
   isModalOpen,
-  onNewIncome,
-  showModal,
+  onIncomeSubmit,
+  hideModal,
   values,
 }) => {
+  const isInEditMode = !!values;
   return (
-    <Modal title="Add income" open={isModalOpen} footer={null} destroyOnClose>
+    <Modal
+      title={`${isInEditMode ? 'Update' : 'Add'} income`}
+      open={isModalOpen}
+      footer={null}
+      destroyOnClose
+    >
       <AddIncomeForm
         onFormSubmit={(income) => {
-          onNewIncome(income);
+          onIncomeSubmit(income);
         }}
-        hideModal={() => showModal(false)}
+        hideModal={hideModal}
         values={values}
       />
     </Modal>
