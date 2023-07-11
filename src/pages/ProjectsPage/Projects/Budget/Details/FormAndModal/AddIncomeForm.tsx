@@ -10,6 +10,7 @@ import {
 } from 'formik-antd';
 import moment from 'moment';
 import { Button, Space } from 'antd';
+import { v4 as uuidv4 } from 'uuid';
 import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
 
 type AddIncomeFormProps = {
@@ -24,6 +25,7 @@ const AddIncomeForm: FC<AddIncomeFormProps> = ({
   values,
 }) => {
   const initialValues: IncomeData = {
+    id: '',
     name: '',
     date: moment(),
     value: 0,
@@ -34,6 +36,7 @@ const AddIncomeForm: FC<AddIncomeFormProps> = ({
       initialValues={values ?? initialValues}
       onSubmit={(values) => {
         onFormSubmit({
+          id: uuidv4(),
           name: values.name,
           value: values.value,
           date: moment(values.date) ?? moment(),
