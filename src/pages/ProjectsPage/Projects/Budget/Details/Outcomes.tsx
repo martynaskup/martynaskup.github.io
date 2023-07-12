@@ -1,9 +1,7 @@
 import { FC, useEffect, useState } from 'react';
-import { Collapse } from 'antd';
-import BudgetItemList from './BudgetItemList';
 import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
 import { initialOutcomes } from './initialData';
-import CreateButtonAndModal from './CreateButtonAndModal';
+import BudgetItemsCollapse, { sortItemList } from './BudgetItemsCollapse';
 
 const Outcomes: FC<{
   onValuesChange: (newOutcomeTotal: number) => void;
@@ -20,9 +18,8 @@ const Outcomes: FC<{
   const handleNewOutcome = (outcome: BudgetItemData) => {
     setOutcomeList((prevOutcomesList) => {
       const newOutcomeList = [...prevOutcomesList, outcome];
-      return sortOutcomeList(newOutcomeList);
+      return sortItemList(newOutcomeList);
     });
-
     onValuesChange(outcome.value);
   };
 
@@ -36,32 +33,12 @@ const Outcomes: FC<{
   };
 
   return (
-    <>
-      <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
-        <Collapse.Panel
-          header="Outcome items"
-          key="1"
-          extra={
-            <CreateButtonAndModal
-              onNewItem={handleNewOutcome}
-              type={BudgetItemType.outcome}
-            />
-          }
-        >
-          <BudgetItemList
-            sourceData={sortOutcomeList(outcomeList)}
-            onItemUpdate={handleOutcomeUpdate}
-            budgetItemType={BudgetItemType.outcome}
-          />
-        </Collapse.Panel>
-      </Collapse>
-    </>
-  );
-};
-
-const sortOutcomeList = (list: BudgetItemData[]) => {
-  return list.sort((outcomeA, outcomeB) =>
-    outcomeB.date.isBefore(outcomeA.date) ? 1 : -1
+    <BudgetItemsCollapse
+      budgetItemType={BudgetItemType.outcome}
+      itemList={outcomeList}
+      onNewItemCreate={handleNewOutcome}
+      onItemUpdate={handleOutcomeUpdate}
+    />
   );
 };
 

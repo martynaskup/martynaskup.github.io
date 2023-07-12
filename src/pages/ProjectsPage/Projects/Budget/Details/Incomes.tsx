@@ -1,10 +1,7 @@
 import { FC, useEffect, useState } from 'react';
-import { Collapse } from 'antd';
-
-import BudgetItemList from './BudgetItemList';
-import CreateButtonAndModal from './CreateButtonAndModal';
 import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
 import { initialIncomes } from './initialData';
+import BudgetItemsCollapse, { sortItemList } from './BudgetItemsCollapse';
 
 const Incomes: FC<{
   onValuesChange: (newIncomeTotal: number) => void;
@@ -21,9 +18,8 @@ const Incomes: FC<{
   const handleNewIncome = (income: BudgetItemData) => {
     setIncomeList((prevIncomesList) => {
       const newIncomeList = [...prevIncomesList, income];
-      return sortIncomeList(newIncomeList);
+      return sortItemList(newIncomeList);
     });
-
     onValuesChange(income.value);
   };
 
@@ -37,32 +33,13 @@ const Incomes: FC<{
   };
 
   return (
-    <>
-      <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
-        <Collapse.Panel
-          header="Income items"
-          key="1"
-          extra={
-            <CreateButtonAndModal
-              onNewItem={handleNewIncome}
-              type={BudgetItemType.income}
-            />
-          }
-        >
-          <BudgetItemList
-            sourceData={sortIncomeList(incomeList)}
-            onItemUpdate={handleIncomeUpdate}
-            budgetItemType={BudgetItemType.income}
-          />
-        </Collapse.Panel>
-      </Collapse>
-    </>
+    <BudgetItemsCollapse
+      budgetItemType={BudgetItemType.income}
+      itemList={incomeList}
+      onNewItemCreate={handleNewIncome}
+      onItemUpdate={handleIncomeUpdate}
+    />
   );
 };
 
-const sortIncomeList = (list: BudgetItemData[]) => {
-  return list.sort((incomeA, incomeB) =>
-    incomeB.date.isBefore(incomeA.date) ? 1 : -1
-  );
-};
 export default Incomes;
