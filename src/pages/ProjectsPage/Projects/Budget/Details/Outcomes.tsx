@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { Collapse } from 'antd';
-import OutcomeList from './OutcomeList';
-import { IncomeOutcomeData, IncomeOutcomeType } from './IncomeOutcomeTypes';
+import BudgetItemList from './BudgetItemList';
+import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
 import { initialOutcomes } from './initialData';
 import CreateButtonAndModal from './CreateButtonAndModal';
 
@@ -17,7 +17,7 @@ const Outcomes: FC<{
     onValuesChange(totalOutcome);
   }, [outcomeList, onValuesChange]);
 
-  const handleNewOutcome = (outcome: IncomeOutcomeData) => {
+  const handleNewOutcome = (outcome: BudgetItemData) => {
     setOutcomeList((prevOutcomesList) => {
       const newOutcomeList = [...prevOutcomesList, outcome];
       return sortOutcomeList(newOutcomeList);
@@ -26,7 +26,7 @@ const Outcomes: FC<{
     onValuesChange(outcome.value);
   };
 
-  const handleOutcomeUpdate = (updatedOutcome: IncomeOutcomeData) => {
+  const handleOutcomeUpdate = (updatedOutcome: BudgetItemData) => {
     setOutcomeList((prevOutcomeList) => {
       return prevOutcomeList.map((outcome) =>
         outcome.id === updatedOutcome.id ? updatedOutcome : outcome
@@ -44,13 +44,14 @@ const Outcomes: FC<{
           extra={
             <CreateButtonAndModal
               onNewItem={handleNewOutcome}
-              type={IncomeOutcomeType.outcome}
+              type={BudgetItemType.outcome}
             />
           }
         >
-          <OutcomeList
-            outcomeList={sortOutcomeList(outcomeList)}
-            onOutcomeUpdate={handleOutcomeUpdate}
+          <BudgetItemList
+            sourceData={sortOutcomeList(outcomeList)}
+            onItemUpdate={handleOutcomeUpdate}
+            budgetItemType={BudgetItemType.outcome}
           />
         </Collapse.Panel>
       </Collapse>
@@ -58,7 +59,7 @@ const Outcomes: FC<{
   );
 };
 
-const sortOutcomeList = (list: IncomeOutcomeData[]) => {
+const sortOutcomeList = (list: BudgetItemData[]) => {
   return list.sort((outcomeA, outcomeB) =>
     outcomeB.date.isBefore(outcomeA.date) ? 1 : -1
   );

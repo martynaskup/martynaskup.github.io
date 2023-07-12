@@ -1,13 +1,13 @@
 import { Moment } from 'moment/moment';
 
-export type IncomeOutcomeData = {
+export type BudgetItemData = {
   id: string;
   name: string;
   value: number;
   date: Moment;
 };
 
-export enum IncomeOutcomeType {
+export enum BudgetItemType {
   income = 'income',
   outcome = 'outcome',
 }

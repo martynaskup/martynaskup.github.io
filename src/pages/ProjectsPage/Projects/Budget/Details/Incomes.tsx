@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import { Collapse } from 'antd';
 
-import IncomeList from './IncomeList';
+import BudgetItemList from './BudgetItemList';
 import CreateButtonAndModal from './CreateButtonAndModal';
-import { IncomeOutcomeData, IncomeOutcomeType } from './IncomeOutcomeTypes';
+import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
 import { initialIncomes } from './initialData';
 
 const Incomes: FC<{
@@ -18,7 +18,7 @@ const Incomes: FC<{
     onValuesChange(totalIncome);
   }, [incomeList, onValuesChange]);
 
-  const handleNewIncome = (income: IncomeOutcomeData) => {
+  const handleNewIncome = (income: BudgetItemData) => {
     setIncomeList((prevIncomesList) => {
       const newIncomeList = [...prevIncomesList, income];
       return sortIncomeList(newIncomeList);
@@ -27,7 +27,7 @@ const Incomes: FC<{
     onValuesChange(income.value);
   };
 
-  const handleIncomeUpdate = (updatedIncome: IncomeOutcomeData) => {
+  const handleIncomeUpdate = (updatedIncome: BudgetItemData) => {
     setIncomeList((prevIncomeList) => {
       return prevIncomeList.map((income) =>
         income.id === updatedIncome.id ? updatedIncome : income
@@ -45,13 +45,14 @@ const Incomes: FC<{
           extra={
             <CreateButtonAndModal
               onNewItem={handleNewIncome}
-              type={IncomeOutcomeType.income}
+              type={BudgetItemType.income}
             />
           }
         >
-          <IncomeList
-            incomeList={sortIncomeList(incomeList)}
-            onIncomeUpdate={handleIncomeUpdate}
+          <BudgetItemList
+            sourceData={sortIncomeList(incomeList)}
+            onItemUpdate={handleIncomeUpdate}
+            budgetItemType={BudgetItemType.income}
           />
         </Collapse.Panel>
       </Collapse>
@@ -59,7 +60,7 @@ const Incomes: FC<{
   );
 };
 
-const sortIncomeList = (list: IncomeOutcomeData[]) => {
+const sortIncomeList = (list: BudgetItemData[]) => {
   return list.sort((incomeA, incomeB) =>
     incomeB.date.isBefore(incomeA.date) ? 1 : -1
   );

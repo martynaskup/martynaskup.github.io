@@ -1,4 +1,4 @@
-import { IncomeOutcomeType } from './IncomeOutcomeTypes';
+import { BudgetItemType } from './IncomeOutcomeTypes';
 
-export const budgetItemName = (type: IncomeOutcomeType) =>
-  type === IncomeOutcomeType.income ? 'Income' : 'Outcome';
+export const budgetItemName = (type: BudgetItemType) =>
+  type === BudgetItemType.income ? 'Income' : 'Outcome';
