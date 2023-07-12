@@ -1,8 +1,13 @@
 .logo {
-  height: 32px;
   margin: 16px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 16px 8px;
+  background: rgba(255, 255, 255, 0.1);
 }
+
+.logo .ant-typography {
+    color: #fff;
+  }
+
 
 .site-layout-sub-header-background {
   background: #fff;

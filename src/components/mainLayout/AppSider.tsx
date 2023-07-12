@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { Layout } from 'antd';
+import { Avatar, Layout, Space, Typography } from 'antd';
 import AppMenu from './AppMenu';
 import { CollapseType } from 'antd/es/layout/Sider';
+import profilePic from '../../assets/images/profilePicture.jpeg';
 
 const AppSider: FC<{
   collapsed: boolean;
@@ -26,7 +27,16 @@ const AppSider: FC<{
         }
       }}
     >
-      <div className="logo" />
+      <div className="logo">
+        <Space>
+          <Avatar alt="profile picture" size="large" src={profilePic} />
+          <Typography.Text>
+            I'm Martyna
+            <br />
+            React Developer
+          </Typography.Text>
+        </Space>
+      </div>
       <AppMenu />
     </Layout.Sider>
   );
