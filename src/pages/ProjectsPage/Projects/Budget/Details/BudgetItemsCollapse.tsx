@@ -3,7 +3,7 @@ import CreateButtonAndModal from './CreateButtonAndModal';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import BudgetItemList from './BudgetItemList';
 import { FC } from 'react';
-import { budgetItemName } from './budgetItemHelpers';
+import { budgetItemName, sortItemList } from './budgetItemHelpers';
 
 type BudgetItemsCollapseProps = {
   budgetItemType: BudgetItemType;
@@ -39,11 +39,5 @@ const BudgetItemsCollapse: FC<BudgetItemsCollapseProps> = ({
     </Collapse.Panel>
   </Collapse>
 );
-
-export const sortItemList = (list: BudgetItemData[]) => {
-  return list.sort((itemA, itemB) =>
-    itemB.date.isBefore(itemA.date) ? 1 : -1
-  );
-};
 
 export default BudgetItemsCollapse;

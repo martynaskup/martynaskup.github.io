@@ -1,7 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import { initialOutcomes } from './initialData';
-import BudgetItemsCollapse, { sortItemList } from './BudgetItemsCollapse';
+import BudgetItemsCollapse from './BudgetItemsCollapse';
+import { sortItemList } from './budgetItemHelpers';
 
 const Outcomes: FC<{
   onValuesChange: (newOutcomeTotal: number) => void;
