@@ -11,12 +11,12 @@ import moment from 'moment';
 import { Button, Space } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
-import { IncomeData } from '../IncomeOutcomeTypes';
+import { IncomeOutcomeData } from '../IncomeOutcomeTypes';
 
 type IncomeOutcomeFormProps = {
-  onFormSubmit: (income: IncomeData) => void;
+  onFormSubmit: (income: IncomeOutcomeData) => void;
   hideModal: () => void;
-  values?: IncomeData;
+  values?: IncomeOutcomeData;
 };
 
 const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
@@ -24,7 +24,7 @@ const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
   hideModal,
   values,
 }) => {
-  const initialValues: IncomeData = {
+  const initialValues: IncomeOutcomeData = {
     id: '',
     name: '',
     date: moment(),
@@ -33,7 +33,7 @@ const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
 
   const isInEditMode = !!values;
   return (
-    <Formik<IncomeData>
+    <Formik<IncomeOutcomeData>
       initialValues={values ?? initialValues}
       onSubmit={(values) => {
         onFormSubmit({

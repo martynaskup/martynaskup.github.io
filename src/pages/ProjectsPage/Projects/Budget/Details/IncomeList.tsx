@@ -3,17 +3,17 @@ import { Button, List, Tooltip } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
-import { IncomeData } from './IncomeOutcomeTypes';
+import { IncomeOutcomeData } from './IncomeOutcomeTypes';
 
 type IncomeListProps = {
-  incomeList: IncomeData[];
-  onIncomeUpdate: (updatedIncome: IncomeData) => void;
+  incomeList: IncomeOutcomeData[];
+  onIncomeUpdate: (updatedIncome: IncomeOutcomeData) => void;
 };
 const IncomeList: FC<IncomeListProps> = ({ incomeList, onIncomeUpdate }) => {
   const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [incomeForUpdate, setIncomeForUpdate] = useState<
-    IncomeData | undefined
+    IncomeOutcomeData | undefined
   >(undefined);
 
   const showModal = (show: boolean) => {

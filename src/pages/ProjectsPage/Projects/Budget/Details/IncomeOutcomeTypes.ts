@@ -1,13 +1,6 @@
 import { Moment } from 'moment/moment';
 
-export type IncomeData = {
-  id: string;
-  name: string;
-  value: number;
-  date: Moment;
-};
-
-export type OutcomeData = {
+export type IncomeOutcomeData = {
   id: string;
   name: string;
   value: number;

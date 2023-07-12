@@ -3,7 +3,7 @@ import { Collapse } from 'antd';
 
 import IncomeList from './IncomeList';
 import AddButtonAndModal from './AddButtonAndModal';
-import { IncomeData } from './IncomeOutcomeTypes';
+import { IncomeOutcomeData } from './IncomeOutcomeTypes';
 import { initialIncomes } from './initialData';
 
 const Incomes: FC<{
@@ -18,7 +18,7 @@ const Incomes: FC<{
     onValuesChange(totalIncome);
   }, [incomeList, onValuesChange]);
 
-  const handleNewIncome = (income: IncomeData) => {
+  const handleNewIncome = (income: IncomeOutcomeData) => {
     setIncomeList((prevIncomesList) => {
       const newIncomeList = [...prevIncomesList, income];
       return sortIncomeList(newIncomeList);
@@ -27,7 +27,7 @@ const Incomes: FC<{
     onValuesChange(income.value);
   };
 
-  const handleIncomeUpdate = (updatedIncome: IncomeData) => {
+  const handleIncomeUpdate = (updatedIncome: IncomeOutcomeData) => {
     setIncomeList((prevIncomeList) => {
       return prevIncomeList.map((income) =>
         income.id === updatedIncome.id ? updatedIncome : income
@@ -54,7 +54,7 @@ const Incomes: FC<{
   );
 };
 
-const sortIncomeList = (list: IncomeData[]) => {
+const sortIncomeList = (list: IncomeOutcomeData[]) => {
   return list.sort((incomeA, incomeB) =>
     incomeB.date.isBefore(incomeA.date) ? 1 : -1
   );

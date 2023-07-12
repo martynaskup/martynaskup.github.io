@@ -1,9 +1,9 @@
-import { IncomeData, OutcomeData } from './IncomeOutcomeTypes';
+import { IncomeOutcomeData } from './IncomeOutcomeTypes';
 import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment/moment';
 
 // TODO - initial values should come the data from LocalStorage or be fetched from an external database
-const initialIncomes: IncomeData[] = [
+const initialIncomes: IncomeOutcomeData[] = [
   {
     id: uuidv4(),
     name: 'salary',
@@ -30,7 +30,7 @@ const initialIncomes: IncomeData[] = [
   },
 ];
 
-const initialOutcomes: OutcomeData[] = [
+const initialOutcomes: IncomeOutcomeData[] = [
   {
     id: uuidv4(),
     name: 'bread',

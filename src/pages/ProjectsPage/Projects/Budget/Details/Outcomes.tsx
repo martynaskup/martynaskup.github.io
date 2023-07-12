@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { Collapse } from 'antd';
 import OutcomeList from './OutcomeList';
-import { OutcomeData } from './IncomeOutcomeTypes';
+import { IncomeOutcomeData } from './IncomeOutcomeTypes';
 import { initialOutcomes } from './initialData';
 
 const Outcomes: FC<{
@@ -16,7 +16,7 @@ const Outcomes: FC<{
     onValuesChange(totalOutcome);
   }, [outcomeList, onValuesChange]);
 
-  const handleNewOutcome = (outcome: OutcomeData) => {
+  const handleNewOutcome = (outcome: IncomeOutcomeData) => {
     setOutcomeList((prevOutcomesList) => {
       const newOutcomeList = [...prevOutcomesList, outcome];
       return sortOutcomeList(newOutcomeList);
@@ -25,7 +25,7 @@ const Outcomes: FC<{
     onValuesChange(outcome.value);
   };
 
-  const handleOutcomeUpdate = (updatedOutcome: OutcomeData) => {
+  const handleOutcomeUpdate = (updatedOutcome: IncomeOutcomeData) => {
     setOutcomeList((prevOutcomeList) => {
       return prevOutcomeList.map((outcome) =>
         outcome.id === updatedOutcome.id ? updatedOutcome : outcome
@@ -52,7 +52,7 @@ const Outcomes: FC<{
   );
 };
 
-const sortOutcomeList = (list: OutcomeData[]) => {
+const sortOutcomeList = (list: IncomeOutcomeData[]) => {
   return list.sort((outcomeA, outcomeB) =>
     outcomeB.date.isBefore(outcomeA.date) ? 1 : -1
   );

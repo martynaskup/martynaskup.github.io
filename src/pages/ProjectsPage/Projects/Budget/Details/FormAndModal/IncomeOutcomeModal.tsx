@@ -2,13 +2,13 @@ import { Modal } from 'antd';
 import IncomeOutcomeForm from './IncomeOutcomeForm';
 import { FC } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
-import { IncomeData, OutcomeData } from '../IncomeOutcomeTypes';
+import { IncomeOutcomeData } from '../IncomeOutcomeTypes';
 
 type IncomeOutcomeModalProps = {
   isModalOpen: boolean;
-  onModalSubmit: (income: IncomeData | OutcomeData) => void;
+  onModalSubmit: (income: IncomeOutcomeData) => void;
   hideModal: () => void;
-  values?: IncomeData;
+  values?: IncomeOutcomeData;
   type: 'income' | 'outcome';
 };
 
