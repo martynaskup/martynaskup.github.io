@@ -12,7 +12,7 @@ import { Button, Space } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import { budgetItemFormValidationSchema } from './budgetItemFormValidationSchema';
 import { BudgetItemData, BudgetItemType } from '../BudgetItemTypes';
-import { budgetItemName } from '../budgetItemHelpers';
+import { budgetItemName, budgetItemNameLowecase } from '../budgetItemHelpers';
 
 type BudgetItemFormProps = {
   onFormSubmit: (income: BudgetItemData) => void;
@@ -74,15 +74,15 @@ const BudgetItemForm: FC<BudgetItemFormProps> = ({
           </Form.Item>
           <Form.Item
             name="date"
-            label={`Date of the ${budgetItemName(type).toLowerCase()}`}
+            label={`Date of the ${budgetItemNameLowecase(type)}`}
           >
             <DatePicker name="date" allowClear={false} />
           </Form.Item>
           <Space style={{ width: '100%', justifyContent: 'end' }}>
             <SubmitButton onSubmit={() => props.submitForm()}>
-              {`${isInEditMode ? 'Update' : 'Add'} ${budgetItemName(
+              {`${isInEditMode ? 'Update' : 'Add'} ${budgetItemNameLowecase(
                 type
-              ).toLowerCase()}`}
+              )}`}
             </SubmitButton>
             <Button onClick={hideModal}>Cancel</Button>
           </Space>

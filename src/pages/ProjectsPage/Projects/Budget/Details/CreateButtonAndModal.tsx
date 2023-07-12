@@ -4,7 +4,7 @@ import { PlusCircleOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import BudgetItemModal from './FormAndModal/BudgetItemModal';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
-import { budgetItemName } from './budgetItemHelpers';
+import { budgetItemName, budgetItemNameLowecase } from './budgetItemHelpers';
 
 type CreateButtonAndModalProps = {
   onNewItem: (item: BudgetItemData) => void;
@@ -33,7 +33,7 @@ const CreateButtonAndModal: FC<CreateButtonAndModalProps> = ({
         Add {budgetItemName(type)}
       </Button>
     ) : (
-      <Tooltip title={`Add ${budgetItemName(type).toLowerCase()}`}>
+      <Tooltip title={`Add ${budgetItemNameLowecase(type)}`}>
         <Button
           type="text"
           size="small"
