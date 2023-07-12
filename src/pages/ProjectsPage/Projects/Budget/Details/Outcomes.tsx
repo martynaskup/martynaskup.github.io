@@ -1,44 +1,8 @@
 import { FC, useEffect, useState } from 'react';
-import moment, { Moment } from 'moment/moment';
-import { v4 as uuidv4 } from 'uuid';
 import { Collapse } from 'antd';
 import OutcomeList from './OutcomeList';
-
-export type OutcomeData = {
-  id: string;
-  name: string;
-  value: number;
-  date: Moment;
-};
-
-const initialOutcomes: OutcomeData[] = [
-  // TODO - initial values should come the data from LocalStorage or be fetched from an external database
-
-  {
-    id: uuidv4(),
-    name: 'bread',
-    value: 20.45,
-    date: moment('2023-07-02'),
-  },
-  {
-    id: uuidv4(),
-    name: `Saturday's party`,
-    value: 500,
-    date: moment('2023-07-10'),
-  },
-  {
-    id: uuidv4(),
-    name: 'electricity bills',
-    value: 140.56,
-    date: moment('2023-07-03'),
-  },
-  {
-    id: uuidv4(),
-    name: 'hairdresser',
-    value: 120.5,
-    date: moment('2023-07-15'),
-  },
-];
+import { OutcomeData } from './IncomeOutcomeTypes';
+import { initialOutcomes } from './initialData';
 
 const Outcomes: FC<{
   onValuesChange: (newOutcomeTotal: number) => void;

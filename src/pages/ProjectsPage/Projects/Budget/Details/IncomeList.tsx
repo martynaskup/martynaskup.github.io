@@ -1,9 +1,9 @@
 import { FC, useState } from 'react';
 import { Button, List, Tooltip } from 'antd';
-import { IncomeData } from './Incomes';
 import { EditOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
+import { IncomeData } from './IncomeOutcomeTypes';
 
 type IncomeListProps = {
   incomeList: IncomeData[];

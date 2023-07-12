@@ -1,9 +1,9 @@
 import { FC, useState } from 'react';
 import { Button, Tooltip } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
-import { IncomeData } from './Incomes';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
+import { IncomeData } from './IncomeOutcomeTypes';
 
 const AddButtonAndModal: FC<{ onNewIncome: (income: IncomeData) => void }> = ({
   onNewIncome,

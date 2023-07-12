@@ -1,9 +1,8 @@
 import { Modal } from 'antd';
-import AddIncomeForm from './AddIncomeForm';
+import IncomeOutcomeForm from './IncomeOutcomeForm';
 import { FC } from 'react';
-import { IncomeData } from '../Incomes';
-import { OutcomeData } from '../Outcomes';
 import { CloseOutlined } from '@ant-design/icons';
+import { IncomeData, OutcomeData } from '../IncomeOutcomeTypes';
 
 type IncomeOutcomeModalProps = {
   isModalOpen: boolean;
@@ -29,7 +28,7 @@ const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
       destroyOnClose
       closeIcon={<CloseOutlined onClick={hideModal} />}
     >
-      <AddIncomeForm
+      <IncomeOutcomeForm
         onFormSubmit={(income) => {
           onModalSubmit(income);
         }}

@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Formik } from 'formik';
-import { IncomeData } from '../Incomes';
 import {
   DatePicker,
   Form,
@@ -12,14 +11,15 @@ import moment from 'moment';
 import { Button, Space } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
+import { IncomeData } from '../IncomeOutcomeTypes';
 
-type AddIncomeFormProps = {
+type IncomeOutcomeFormProps = {
   onFormSubmit: (income: IncomeData) => void;
   hideModal: () => void;
   values?: IncomeData;
 };
 
-const AddIncomeForm: FC<AddIncomeFormProps> = ({
+const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
   onFormSubmit,
   hideModal,
   values,
@@ -79,4 +79,4 @@ const AddIncomeForm: FC<AddIncomeFormProps> = ({
   );
 };
 
-export default AddIncomeForm;
+export default IncomeOutcomeForm;
