@@ -2,8 +2,8 @@ import { FC, useEffect, useState } from 'react';
 import { Collapse } from 'antd';
 
 import IncomeList from './IncomeList';
-import AddButtonAndModal from './AddButtonAndModal';
-import { IncomeOutcomeData } from './IncomeOutcomeTypes';
+import CreateButtonAndModal from './CreateButtonAndModal';
+import { IncomeOutcomeData, IncomeOutcomeType } from './IncomeOutcomeTypes';
 import { initialIncomes } from './initialData';
 
 const Incomes: FC<{
@@ -42,7 +42,12 @@ const Incomes: FC<{
         <Collapse.Panel
           header="Income items"
           key="1"
-          extra={<AddButtonAndModal onNewIncome={handleNewIncome} />}
+          extra={
+            <CreateButtonAndModal
+              onNewItem={handleNewIncome}
+              type={IncomeOutcomeType.income}
+            />
+          }
         >
           <IncomeList
             incomeList={sortIncomeList(incomeList)}

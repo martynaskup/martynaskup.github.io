@@ -4,10 +4,17 @@ import { PlusCircleOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
 import { IncomeOutcomeData, IncomeOutcomeType } from './IncomeOutcomeTypes';
+import { budgetItemName } from './IncomeOutcomeHelpers';
 
-const AddButtonAndModal: FC<{
-  onNewIncome: (income: IncomeOutcomeData) => void;
-}> = ({ onNewIncome }) => {
+type CreateButtonAndModalProps = {
+  onNewItem: (item: IncomeOutcomeData) => void;
+  type: IncomeOutcomeType;
+};
+
+const CreateButtonAndModal: FC<CreateButtonAndModalProps> = ({
+  onNewItem,
+  type,
+}) => {
   const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,10 +30,10 @@ const AddButtonAndModal: FC<{
         icon={<PlusCircleOutlined />}
         onClick={() => showModal(true)}
       >
-        Add income
+        Add {budgetItemName(type)}
       </Button>
     ) : (
-      <Tooltip title="Add income">
+      <Tooltip title={`Add ${budgetItemName(type).toLowerCase()}`}>
         <Button
           type="text"
           size="small"
@@ -42,11 +49,11 @@ const AddButtonAndModal: FC<{
       <IncomeOutcomeModal
         isModalOpen={isModalOpen}
         hideModal={() => showModal(false)}
-        onModalSubmit={onNewIncome}
-        type={IncomeOutcomeType.income}
+        onModalSubmit={onNewItem}
+        type={type}
       />
     </div>
   );
 };
 
-export default AddButtonAndModal;
+export default CreateButtonAndModal;

@@ -1,8 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import { Collapse } from 'antd';
 import OutcomeList from './OutcomeList';
-import { IncomeOutcomeData } from './IncomeOutcomeTypes';
+import { IncomeOutcomeData, IncomeOutcomeType } from './IncomeOutcomeTypes';
 import { initialOutcomes } from './initialData';
+import CreateButtonAndModal from './CreateButtonAndModal';
 
 const Outcomes: FC<{
   onValuesChange: (newOutcomeTotal: number) => void;
@@ -40,7 +41,12 @@ const Outcomes: FC<{
         <Collapse.Panel
           header="Outcome items"
           key="1"
-          // extra={<AddButtonAndModal onNewOutcome={handleNewOutcome} />}
+          extra={
+            <CreateButtonAndModal
+              onNewItem={handleNewOutcome}
+              type={IncomeOutcomeType.outcome}
+            />
+          }
         >
           <OutcomeList
             outcomeList={sortOutcomeList(outcomeList)}
