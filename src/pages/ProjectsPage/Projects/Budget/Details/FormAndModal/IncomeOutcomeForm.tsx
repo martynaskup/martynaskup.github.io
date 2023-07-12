@@ -10,7 +10,7 @@ import {
 import moment from 'moment';
 import { Button, Space } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
-import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
+import { createIncomeFormValidationSchema } from './CreateIncomeFormValidationSchema';
 import { IncomeOutcomeData, IncomeOutcomeType } from '../IncomeOutcomeTypes';
 import { budgetItemName } from '../IncomeOutcomeHelpers';
 
@@ -47,7 +47,7 @@ const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
         });
         hideModal();
       }}
-      validationSchema={addIncomeFormValidationSchema}
+      validationSchema={createIncomeFormValidationSchema}
     >
       {(props) => (
         <Form
