@@ -3,6 +3,7 @@ import AddIncomeForm from './AddIncomeForm';
 import { FC } from 'react';
 import { IncomeData } from '../Incomes';
 import { OutcomeData } from '../Outcomes';
+import { CloseOutlined } from '@ant-design/icons';
 
 type IncomeOutcomeModalProps = {
   isModalOpen: boolean;
@@ -26,6 +27,7 @@ const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
       open={isModalOpen}
       footer={null}
       destroyOnClose
+      closeIcon={<CloseOutlined onClick={hideModal} />}
     >
       <AddIncomeForm
         onFormSubmit={(income) => {
