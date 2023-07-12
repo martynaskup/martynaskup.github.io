@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Col, Statistic } from 'antd';
-import { LikeOutlined } from '@ant-design/icons';
+import { FrownOutlined, LikeOutlined } from '@ant-design/icons';
 import { StyledSummaryRow } from './Budget.styles';
 
 const Summary: FC<{ sum: number }> = ({ sum }) => {
@@ -13,14 +13,21 @@ const Summary: FC<{ sum: number }> = ({ sum }) => {
         <Statistic
           title="left in July"
           value={sum}
+          valueStyle={{
+            fontWeight: 670,
+            color: sum < 0 ? '#cf1322' : '#3f8600',
+          }}
           suffix="€"
-          prefix={<LikeOutlined />}
+          prefix={sum < 0 ? <FrownOutlined /> : <LikeOutlined />}
         />
       </Col>
       <Col span={6}>
         <Statistic.Countdown
           title="days left"
           value={lastDayOfMonth.toString()}
+          valueStyle={{
+            fontWeight: 670,
+          }}
           format="D"
         />
       </Col>
