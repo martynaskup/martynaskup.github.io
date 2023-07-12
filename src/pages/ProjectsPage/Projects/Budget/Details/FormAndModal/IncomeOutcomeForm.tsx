@@ -11,17 +11,20 @@ import moment from 'moment';
 import { Button, Space } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import { addIncomeFormValidationSchema } from './AddIncomeFormValidationSchema';
-import { IncomeOutcomeData } from '../IncomeOutcomeTypes';
+import { IncomeOutcomeData, IncomeOutcomeType } from '../IncomeOutcomeTypes';
+import { budgetItemName } from '../IncomeOutcomeHelpers';
 
 type IncomeOutcomeFormProps = {
   onFormSubmit: (income: IncomeOutcomeData) => void;
   hideModal: () => void;
+  type: IncomeOutcomeType;
   values?: IncomeOutcomeData;
 };
 
 const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
   onFormSubmit,
   hideModal,
+  type,
   values,
 }) => {
   const initialValues: IncomeOutcomeData = {
@@ -50,8 +53,12 @@ const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
         <Form
           preserve={false} // required when setting destroyOnClose in Modal component if Modal is used with Form in order to reset the values
         >
-          <Form.Item name="name" label="Income title">
-            <Input name="name" placeholder="income name" suffix={<span />} />
+          <Form.Item name="name" label={`${budgetItemName(type)} title`}>
+            <Input
+              name="name"
+              placeholder={`${budgetItemName(type)} title`}
+              suffix={<span />}
+            />
           </Form.Item>
           <Form.Item name="value" label="Value">
             <InputNumber
@@ -64,12 +71,17 @@ const IncomeOutcomeForm: FC<IncomeOutcomeFormProps> = ({
               addonAfter="€"
             />
           </Form.Item>
-          <Form.Item name="date" label="Date of the income">
+          <Form.Item
+            name="date"
+            label={`Date of the ${budgetItemName(type).toLowerCase()}`}
+          >
             <DatePicker name="date" allowClear={false} />
           </Form.Item>
           <Space style={{ width: '100%', justifyContent: 'end' }}>
             <SubmitButton onSubmit={() => props.submitForm()}>
-              {`${isInEditMode ? 'Update' : 'Add'} income`}
+              {`${isInEditMode ? 'Update' : 'Add'} ${budgetItemName(
+                type
+              ).toLowerCase()}`}
             </SubmitButton>
             <Button onClick={hideModal}>Cancel</Button>
           </Space>

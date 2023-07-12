@@ -2,22 +2,22 @@ import { Modal } from 'antd';
 import IncomeOutcomeForm from './IncomeOutcomeForm';
 import { FC } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
-import { IncomeOutcomeData } from '../IncomeOutcomeTypes';
+import { IncomeOutcomeData, IncomeOutcomeType } from '../IncomeOutcomeTypes';
 
 type IncomeOutcomeModalProps = {
   isModalOpen: boolean;
   onModalSubmit: (income: IncomeOutcomeData) => void;
   hideModal: () => void;
+  type: IncomeOutcomeType;
   values?: IncomeOutcomeData;
-  type: 'income' | 'outcome';
 };
 
 const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
   isModalOpen,
   onModalSubmit,
   hideModal,
-  values,
   type,
+  values,
 }) => {
   const isInEditMode = !!values;
   return (
@@ -34,6 +34,7 @@ const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
         }}
         hideModal={hideModal}
         values={values}
+        type={type}
       />
     </Modal>
   );

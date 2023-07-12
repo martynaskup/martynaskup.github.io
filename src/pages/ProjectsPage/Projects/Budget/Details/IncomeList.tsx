@@ -3,7 +3,7 @@ import { Button, List, Tooltip } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
-import { IncomeOutcomeData } from './IncomeOutcomeTypes';
+import { IncomeOutcomeData, IncomeOutcomeType } from './IncomeOutcomeTypes';
 
 type IncomeListProps = {
   incomeList: IncomeOutcomeData[];
@@ -66,7 +66,7 @@ const IncomeList: FC<IncomeListProps> = ({ incomeList, onIncomeUpdate }) => {
       />
       {isModalOpen && (
         <IncomeOutcomeModal
-          type="income"
+          type={IncomeOutcomeType.income}
           isModalOpen={isModalOpen}
           onModalSubmit={onIncomeUpdate}
           hideModal={() => showModal(false)}

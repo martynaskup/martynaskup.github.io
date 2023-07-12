@@ -6,3 +6,8 @@ export type IncomeOutcomeData = {
   value: number;
   date: Moment;
 };
+
+export enum IncomeOutcomeType {
+  income = 'income',
+  outcome = 'outcome',
+}
