@@ -32,12 +32,20 @@ const Incomes: FC<{
     onValuesChange(updatedIncome.value);
   };
 
+  const handleIncomeDelete = (item: BudgetItemData) => {
+    setIncomeList((prevIncomeList) => {
+      return prevIncomeList.filter((income) => income.id !== item.id);
+    });
+    onValuesChange(item.value);
+  };
+
   return (
     <BudgetItemsCollapse
       budgetItemType={BudgetItemType.income}
       itemList={incomeList}
       onNewItemCreate={handleNewIncome}
       onItemUpdate={handleIncomeUpdate}
+      onItemDelete={handleIncomeDelete}
     />
   );
 };

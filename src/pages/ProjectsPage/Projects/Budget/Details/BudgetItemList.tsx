@@ -1,22 +1,22 @@
 import { FC, useState } from 'react';
 import { Button, List, Tooltip } from 'antd';
-import { EditOutlined } from '@ant-design/icons';
-import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import BudgetItemModal from './FormAndModal/BudgetItemModal';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 
 type BudgetItemProps = {
   sourceData: BudgetItemData[];
   onItemUpdate: (updatedItem: BudgetItemData) => void;
+  onItemDelete: (item: BudgetItemData) => void;
   budgetItemType: BudgetItemType;
 };
 
 const BudgetItemList: FC<BudgetItemProps> = ({
   sourceData,
   onItemUpdate,
+  onItemDelete,
   budgetItemType,
 }) => {
-  const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [itemToBeUpdated, setItemToBeUpdated] = useState<
     BudgetItemData | undefined
@@ -33,10 +33,11 @@ const BudgetItemList: FC<BudgetItemProps> = ({
         dataSource={sourceData}
         renderItem={(item) => (
           <List.Item
+            key={item.id}
             style={{ paddingRight: 0 }}
             actions={[
               <>
-                {lg ? (
+                <Tooltip title="Edit">
                   <Button
                     type="text"
                     icon={<EditOutlined />}
@@ -44,24 +45,19 @@ const BudgetItemList: FC<BudgetItemProps> = ({
                       showModal(true);
                       setItemToBeUpdated(item);
                     }}
-                  >
-                    Edit
-                  </Button>
-                ) : (
-                  <Tooltip title="Edit">
-                    <Button
-                      type="text"
-                      icon={<EditOutlined />}
-                      onClick={() => {
-                        showModal(true);
-                        setItemToBeUpdated(item);
-                      }}
-                    />
-                  </Tooltip>
-                )}
+                  />
+                </Tooltip>
+                <Tooltip title="Delete">
+                  <Button
+                    type="text"
+                    icon={<DeleteOutlined />}
+                    onClick={() => {
+                      onItemDelete(item);
+                    }}
+                  />
+                </Tooltip>
               </>,
             ]}
-            key={item.id}
           >
             <List.Item.Meta
               title={`${item.name}: ${item.value} €`}

@@ -32,12 +32,20 @@ const Outcomes: FC<{
     onValuesChange(updatedOutcome.value);
   };
 
+  const handleOutcomeDelete = (item: BudgetItemData) => {
+    setOutcomeList((prevOutcomeList) => {
+      return prevOutcomeList.filter((outcome) => outcome.id !== item.id);
+    });
+    onValuesChange(item.value);
+  };
+
   return (
     <BudgetItemsCollapse
       budgetItemType={BudgetItemType.outcome}
       itemList={outcomeList}
       onNewItemCreate={handleNewOutcome}
       onItemUpdate={handleOutcomeUpdate}
+      onItemDelete={handleOutcomeDelete}
     />
   );
 };

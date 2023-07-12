@@ -10,12 +10,14 @@ type BudgetItemsCollapseProps = {
   itemList: BudgetItemData[];
   onNewItemCreate: (newItem: BudgetItemData) => void;
   onItemUpdate: (updatedItem: BudgetItemData) => void;
+  onItemDelete: (item: BudgetItemData) => void;
 };
 const BudgetItemsCollapse: FC<BudgetItemsCollapseProps> = ({
   budgetItemType,
   itemList,
   onNewItemCreate,
   onItemUpdate,
+  onItemDelete,
 }) => (
   <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
     <Collapse.Panel
@@ -31,6 +33,7 @@ const BudgetItemsCollapse: FC<BudgetItemsCollapseProps> = ({
       <BudgetItemList
         sourceData={sortItemList(itemList)}
         onItemUpdate={onItemUpdate}
+        onItemDelete={onItemDelete}
         budgetItemType={budgetItemType}
       />
     </Collapse.Panel>
