@@ -4,10 +4,13 @@ import { Card, Col, Divider, Row, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import Incomes from './Incomes';
 import Outcomes from './Outcomes';
+import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
 const Details: FC<{ onValuesChange: (values: number) => void }> = ({
   onValuesChange,
 }) => {
+  const { md } = useBreakpoint();
+
   const [incomes, setIncomes] = useState(0);
   const [outcomes, setOutcomes] = useState(0);
 
@@ -26,38 +29,49 @@ const Details: FC<{ onValuesChange: (values: number) => void }> = ({
     []
   );
 
+  const incomeDetailsCard = (
+    <Card>
+      <Statistic
+        title="Cash in"
+        value={incomes}
+        precision={2}
+        valueStyle={{ color: '#3f8600' }}
+        prefix={<ArrowUpOutlined />}
+        suffix="€"
+      />
+      <Divider />
+      <Incomes onValuesChange={handleIncomeChange} />
+    </Card>
+  );
+
+  const outcomeDetailsCard = (
+    <Card>
+      <Statistic
+        title="Cash out"
+        value={outcomes}
+        precision={2}
+        valueStyle={{ color: '#cf1322' }}
+        prefix={<ArrowDownOutlined />}
+        suffix="€"
+      />
+      <Divider />
+      <Outcomes onValuesChange={handleOutcomeChange} />
+    </Card>
+  );
+
   return (
     <StyledDetailsDiv>
-      <Row gutter={16}>
-        <Col span={12}>
-          <Card>
-            <Statistic
-              title="Cash in"
-              value={incomes}
-              precision={2}
-              valueStyle={{ color: '#3f8600' }}
-              prefix={<ArrowUpOutlined />}
-              suffix="€"
-            />
-            <Divider />
-            <Incomes onValuesChange={handleIncomeChange} />
-          </Card>
-        </Col>
-        <Col span={12}>
-          <Card>
-            <Statistic
-              title="Cash out"
-              value={outcomes}
-              precision={2}
-              valueStyle={{ color: '#cf1322' }}
-              prefix={<ArrowDownOutlined />}
-              suffix="€"
-            />
-            <Divider />
-            <Outcomes onValuesChange={handleOutcomeChange} />
-          </Card>
-        </Col>
-      </Row>
+      {md ? (
+        <Row gutter={16}>
+          <Col span={12}>{incomeDetailsCard}</Col>
+          <Col span={12}>{outcomeDetailsCard}</Col>
+        </Row>
+      ) : (
+        <>
+          {incomeDetailsCard}
+          {outcomeDetailsCard}
+        </>
+      )}
     </StyledDetailsDiv>
   );
 };

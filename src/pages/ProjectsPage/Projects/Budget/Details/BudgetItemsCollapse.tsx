@@ -4,6 +4,7 @@ import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import BudgetItemList from './BudgetItemList';
 import { FC } from 'react';
 import { budgetItemName, sortItemList } from './budgetItemHelpers';
+import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
 type BudgetItemsCollapseProps = {
   budgetItemType: BudgetItemType;
@@ -18,26 +19,32 @@ const BudgetItemsCollapse: FC<BudgetItemsCollapseProps> = ({
   onNewItemCreate,
   onItemUpdate,
   onItemDelete,
-}) => (
-  <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
-    <Collapse.Panel
-      header={`${budgetItemName(budgetItemType)} items`}
-      key="1"
-      extra={
-        <CreateButtonAndModal
-          onNewItem={onNewItemCreate}
-          type={budgetItemType}
-        />
+}) => {
+  const { md } = useBreakpoint();
+
+  return (
+    <Collapse defaultActiveKey={['1']} style={{ textAlign: 'left' }}>
+      {
+        <Collapse.Panel
+          header={`${budgetItemName(budgetItemType)} items`}
+          key={md ? '1' : '0'} // initially open the panel or keep it closed depending on the breakpoint width
+          extra={
+            <CreateButtonAndModal
+              onNewItem={onNewItemCreate}
+              type={budgetItemType}
+            />
+          }
+        >
+          <BudgetItemList
+            sourceData={sortItemList(itemList)}
+            onItemUpdate={onItemUpdate}
+            onItemDelete={onItemDelete}
+            budgetItemType={budgetItemType}
+          />
+        </Collapse.Panel>
       }
-    >
-      <BudgetItemList
-        sourceData={sortItemList(itemList)}
-        onItemUpdate={onItemUpdate}
-        onItemDelete={onItemDelete}
-        budgetItemType={budgetItemType}
-      />
-    </Collapse.Panel>
-  </Collapse>
-);
+    </Collapse>
+  );
+};
 
 export default BudgetItemsCollapse;
