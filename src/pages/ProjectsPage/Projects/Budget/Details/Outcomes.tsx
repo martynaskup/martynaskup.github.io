@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
+import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import { initialOutcomes } from './initialData';
 import BudgetItemsCollapse, { sortItemList } from './BudgetItemsCollapse';
 

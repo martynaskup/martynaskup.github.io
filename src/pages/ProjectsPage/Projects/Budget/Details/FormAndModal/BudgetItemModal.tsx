@@ -2,7 +2,7 @@ import { Modal } from 'antd';
 import BudgetItemForm from './BudgetItemForm';
 import { FC } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
-import { BudgetItemData, BudgetItemType } from '../IncomeOutcomeTypes';
+import { BudgetItemData, BudgetItemType } from '../BudgetItemTypes';
 
 type BudgetItemModalProps = {
   isModalOpen: boolean;

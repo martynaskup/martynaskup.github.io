@@ -3,7 +3,7 @@ import { Button, List, Tooltip } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import BudgetItemModal from './FormAndModal/BudgetItemModal';
-import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
+import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 
 type BudgetItemProps = {
   sourceData: BudgetItemData[];

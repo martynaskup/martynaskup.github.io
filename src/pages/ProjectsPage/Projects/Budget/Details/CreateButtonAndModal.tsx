@@ -3,8 +3,8 @@ import { Button, Tooltip } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import BudgetItemModal from './FormAndModal/BudgetItemModal';
-import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
-import { budgetItemName } from './IncomeOutcomeHelpers';
+import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
+import { budgetItemName } from './budgetItemHelpers';
 
 type CreateButtonAndModalProps = {
   onNewItem: (item: BudgetItemData) => void;

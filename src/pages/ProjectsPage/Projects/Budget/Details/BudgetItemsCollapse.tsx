@@ -1,9 +1,9 @@
 import { Collapse } from 'antd';
 import CreateButtonAndModal from './CreateButtonAndModal';
-import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
+import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import BudgetItemList from './BudgetItemList';
 import { FC } from 'react';
-import { budgetItemName } from './IncomeOutcomeHelpers';
+import { budgetItemName } from './budgetItemHelpers';
 
 type BudgetItemsCollapseProps = {
   budgetItemType: BudgetItemType;

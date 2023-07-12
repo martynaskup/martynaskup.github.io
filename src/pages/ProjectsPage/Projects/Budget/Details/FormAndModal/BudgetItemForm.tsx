@@ -11,8 +11,8 @@ import moment from 'moment';
 import { Button, Space } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
 import { budgetItemFormValidationSchema } from './budgetItemFormValidationSchema';
-import { BudgetItemData, BudgetItemType } from '../IncomeOutcomeTypes';
-import { budgetItemName } from '../IncomeOutcomeHelpers';
+import { BudgetItemData, BudgetItemType } from '../BudgetItemTypes';
+import { budgetItemName } from '../budgetItemHelpers';
 
 type BudgetItemFormProps = {
   onFormSubmit: (income: BudgetItemData) => void;
