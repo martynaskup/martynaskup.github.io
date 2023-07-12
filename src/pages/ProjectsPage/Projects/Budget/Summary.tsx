@@ -13,12 +13,13 @@ const Summary: FC<{ sum: number }> = ({ sum }) => {
         <Statistic
           title="left in July"
           value={sum}
+          suffix="€"
+          prefix={sum < 0 ? <FrownOutlined /> : <LikeOutlined />}
+          precision={2}
           valueStyle={{
             fontWeight: 670,
             color: sum < 0 ? '#cf1322' : '#3f8600',
           }}
-          suffix="€"
-          prefix={sum < 0 ? <FrownOutlined /> : <LikeOutlined />}
         />
       </Col>
       <Col span={6}>
