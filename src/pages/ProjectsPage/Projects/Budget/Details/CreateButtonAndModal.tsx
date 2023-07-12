@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { Button, Tooltip } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
-import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
+import BudgetItemModal from './FormAndModal/BudgetItemModal';
 import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
 import { budgetItemName } from './IncomeOutcomeHelpers';
 
@@ -46,7 +46,7 @@ const CreateButtonAndModal: FC<CreateButtonAndModalProps> = ({
   return (
     <div onClick={(event) => event.stopPropagation()}>
       <AddButton />
-      <IncomeOutcomeModal
+      <BudgetItemModal
         isModalOpen={isModalOpen}
         hideModal={() => showModal(false)}
         onModalSubmit={onNewItem}

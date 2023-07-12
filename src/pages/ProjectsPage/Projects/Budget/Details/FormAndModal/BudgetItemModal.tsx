@@ -1,10 +1,10 @@
 import { Modal } from 'antd';
-import IncomeOutcomeForm from './IncomeOutcomeForm';
+import BudgetItemForm from './BudgetItemForm';
 import { FC } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 import { BudgetItemData, BudgetItemType } from '../IncomeOutcomeTypes';
 
-type IncomeOutcomeModalProps = {
+type BudgetItemModalProps = {
   isModalOpen: boolean;
   onModalSubmit: (income: BudgetItemData) => void;
   hideModal: () => void;
@@ -12,7 +12,7 @@ type IncomeOutcomeModalProps = {
   values?: BudgetItemData;
 };
 
-const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
+const BudgetItemModal: FC<BudgetItemModalProps> = ({
   isModalOpen,
   onModalSubmit,
   hideModal,
@@ -28,7 +28,7 @@ const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
       destroyOnClose
       closeIcon={<CloseOutlined onClick={hideModal} />}
     >
-      <IncomeOutcomeForm
+      <BudgetItemForm
         onFormSubmit={(income) => {
           onModalSubmit(income);
         }}
@@ -40,4 +40,4 @@ const IncomeOutcomeModal: FC<IncomeOutcomeModalProps> = ({
   );
 };
 
-export default IncomeOutcomeModal;
+export default BudgetItemModal;

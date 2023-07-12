@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { Button, List, Tooltip } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
-import IncomeOutcomeModal from './FormAndModal/IncomeOutcomeModal';
+import BudgetItemModal from './FormAndModal/BudgetItemModal';
 import { BudgetItemData, BudgetItemType } from './IncomeOutcomeTypes';
 
 type BudgetItemProps = {
@@ -71,7 +71,7 @@ const BudgetItemList: FC<BudgetItemProps> = ({
         )}
       />
       {isModalOpen && (
-        <IncomeOutcomeModal
+        <BudgetItemModal
           type={budgetItemType}
           isModalOpen={isModalOpen}
           onModalSubmit={onItemUpdate}

@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const createIncomeFormValidationSchema = yup.object({
+export const budgetItemFormValidationSchema = yup.object({
   name: yup.string().required('Title is required'),
   value: yup
     .number()
