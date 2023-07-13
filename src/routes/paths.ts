@@ -4,7 +4,6 @@ const projectsPaths = {
   base: 'projects',
   previousPortfolio: generatePathToProject('previousPortfolio'),
   budget: generatePathToProject('budget'),
-  project2: generatePathToProject('project2'),
 };
 
 const paths = {

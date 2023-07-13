@@ -20,10 +20,6 @@ const projectsRoutes: RouteObject[] = [
     element: <PreviousPortfolio />,
   },
   { path: paths.projectsPaths.budget, element: <Budget /> },
-  {
-    path: paths.projectsPaths.project2,
-    element: <> PROJECT 2</>,
-  },
 ];
 
 const routes: RouteObject[] = [

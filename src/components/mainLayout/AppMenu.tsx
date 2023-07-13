@@ -26,10 +26,6 @@ function AppMenu() {
       label: <Link to={paths.projectsPaths.budget}>Budget</Link>,
       key: '102',
     },
-    {
-      label: <Link to={paths.projectsPaths.project2}>Project 2</Link>,
-      key: '103',
-    },
   ];
 
   const items: MenuItem[] = [
