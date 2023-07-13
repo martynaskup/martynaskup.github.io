@@ -1,7 +1,7 @@
 import { StyledAboutImage } from './About.styles';
 import myImg from '../../assets/images/my_pic.jpg';
 
-const MyImage = () => {
+function MyImage() {
   return (
     <StyledAboutImage
       width={250}
@@ -17,5 +17,5 @@ const MyImage = () => {
       }
     />
   );
-};
+}
 export default MyImage;

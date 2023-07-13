@@ -4,7 +4,7 @@ import { Col } from 'antd';
 import MyImage from './MyImage';
 import AboutDetails from './AboutDetails';
 
-const AboutMain = () => {
+function AboutMain() {
   const { md } = useBreakpoint();
 
   return md ? (
@@ -26,6 +26,6 @@ const AboutMain = () => {
       <AboutDetails />
     </Col>
   );
-};
+}
 
 export default AboutMain;

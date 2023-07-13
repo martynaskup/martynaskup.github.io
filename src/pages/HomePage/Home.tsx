@@ -4,7 +4,7 @@ import React from 'react';
 import { StyledStepsSpace, StyledStepsTypographyText } from './Home.styles';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
-export default function Home() {
+function Home() {
   const { lg } = useBreakpoint();
 
   return (
@@ -39,3 +39,5 @@ export default function Home() {
     </Space>
   );
 }
+
+export default Home;

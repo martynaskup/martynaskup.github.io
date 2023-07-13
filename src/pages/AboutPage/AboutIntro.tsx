@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 
-const AboutIntro = () => {
+function AboutIntro() {
   return (
     <>
       <Typography.Title level={2}>
@@ -15,6 +15,6 @@ const AboutIntro = () => {
       </Typography.Text>
     </>
   );
-};
+}
 
 export default AboutIntro;
