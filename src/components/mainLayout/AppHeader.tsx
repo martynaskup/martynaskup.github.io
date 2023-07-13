@@ -1,10 +1,10 @@
-import { Space, Typography } from 'antd';
+import { Space } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import {
   StyledAppHeaderLayout,
   StyledMenuFoldingButton,
 } from './MainLayout.styles';
+import AppHeaderText from './AppHeaderText';
 
 type AppHeaderProps = {
   collapsed: boolean;
@@ -12,8 +12,6 @@ type AppHeaderProps = {
 };
 
 function AppHeader({ collapsed, onMenuOpenerClick }: AppHeaderProps) {
-  const { sm } = useBreakpoint();
-
   return (
     <StyledAppHeaderLayout>
       <Space align="baseline">
@@ -22,9 +20,7 @@ function AppHeader({ collapsed, onMenuOpenerClick }: AppHeaderProps) {
           icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           onClick={onMenuOpenerClick}
         />
-        <Typography.Title level={3} style={{ fontSize: sm ? '16px' : '12px' }}>
-          Hello! I'm Martyna, React Developer. Welcome on my page!
-        </Typography.Title>
+        <AppHeaderText />
       </Space>
     </StyledAppHeaderLayout>
   );
