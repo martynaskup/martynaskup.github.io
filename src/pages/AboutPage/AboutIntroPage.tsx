@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 
-function AboutIntro() {
+function AboutIntroPage() {
   return (
     <>
       <Typography.Title level={2}>
@@ -17,4 +17,4 @@ function AboutIntro() {
   );
 }
 
-export default AboutIntro;
+export default AboutIntroPage;

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-function Projects() {
+function ProjectsPage() {
   return <Outlet />;
 }
 
-export default Projects;
+export default ProjectsPage;

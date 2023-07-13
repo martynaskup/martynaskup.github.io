@@ -1,8 +1,8 @@
 import { RouteObject } from 'react-router-dom';
 import AppLayout from '../components/mainLayout/AppLayout';
-import Home from '../pages/HomePage/Home';
-import About from '../pages/AboutPage/About';
-import Projects from '../pages/ProjectsPage/Projects';
+import HomePage from '../pages/HomePage/HomePage';
+import AboutPage from '../pages/AboutPage/AboutPage';
+import ProjectsPage from '../pages/ProjectsPage/ProjectsPage';
 import ContactInfo from '../pages/ContactInfo';
 import NoRouteMatch from '../pages/NoRouteMatch';
 import paths from './paths';
@@ -33,14 +33,14 @@ const routes: RouteObject[] = [
     children: [
       {
         path: paths.home,
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: paths.about,
-        element: <About />,
+        element: <AboutPage />,
       },
       {
-        element: <Projects />,
+        element: <ProjectsPage />,
         children: projectsRoutes,
       },
       {

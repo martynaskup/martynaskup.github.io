@@ -2,7 +2,7 @@ import { StyledDetailsSpace } from './About.styles';
 import { Typography } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 
-function AboutDetails() {
+function AboutDetailsPage() {
   return (
     <StyledDetailsSpace direction="vertical" size="middle">
       <Typography.Text>
@@ -51,4 +51,4 @@ function AboutDetails() {
   );
 }
 
-export default AboutDetails;
+export default AboutDetailsPage;
