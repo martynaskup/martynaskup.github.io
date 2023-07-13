@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom';
 const AppContent = () => {
   return (
     <>
-      <Layout.Content style={{ margin: '16px 16px 0', textAlign: 'center' }}>
+      <Layout.Content style={{ margin: '0', textAlign: 'center' }}>
         <div
           className="site-layout-background"
-          style={{ padding: 24, minHeight: 500 }}
+          style={{ padding: 24, minHeight: '75vh' }}
         >
           <Outlet />
         </div>

@@ -8,9 +8,13 @@
     color: #fff;
   }
 
+.ant-layout-sider {
+  height: 85vh;
+}
 
 .site-layout-sub-header-background {
   background: #fff;
+  border-bottom: 2px solid #f0f2f5;
 }
 
 .site-layout-background {
