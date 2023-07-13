@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Button, List, Tooltip } from 'antd';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import BudgetItemModal from './FormAndModal/BudgetItemModal';
@@ -11,12 +11,12 @@ type BudgetItemProps = {
   budgetItemType: BudgetItemType;
 };
 
-const BudgetItemList: FC<BudgetItemProps> = ({
+function BudgetItemList({
   sourceData,
   onItemUpdate,
   onItemDelete,
   budgetItemType,
-}) => {
+}: BudgetItemProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [itemToBeUpdated, setItemToBeUpdated] = useState<
     BudgetItemData | undefined
@@ -77,6 +77,6 @@ const BudgetItemList: FC<BudgetItemProps> = ({
       )}
     </>
   );
-};
+}
 
 export default BudgetItemList;

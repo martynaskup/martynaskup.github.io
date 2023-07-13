@@ -1,9 +1,8 @@
-import { FC } from 'react';
 import { Col, Statistic } from 'antd';
 import { FrownOutlined, LikeOutlined } from '@ant-design/icons';
 import { StyledSummaryRow } from './Budget.styles';
 
-const Summary: FC<{ sum: number }> = ({ sum }) => {
+function Summary({ sum }: { sum: number }) {
   const today = new Date();
   const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 
@@ -34,6 +33,6 @@ const Summary: FC<{ sum: number }> = ({ sum }) => {
       </Col>
     </StyledSummaryRow>
   );
-};
+}
 
 export default Summary;

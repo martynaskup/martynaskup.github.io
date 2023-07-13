@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Formik } from 'formik';
 import {
   DatePicker,
@@ -21,12 +20,12 @@ type BudgetItemFormProps = {
   values?: BudgetItemData;
 };
 
-const BudgetItemForm: FC<BudgetItemFormProps> = ({
+function BudgetItemForm({
   onFormSubmit,
   hideModal,
   type,
   values,
-}) => {
+}: BudgetItemFormProps) {
   const initialValues: BudgetItemData = {
     id: '',
     name: '',
@@ -90,6 +89,6 @@ const BudgetItemForm: FC<BudgetItemFormProps> = ({
       )}
     </Formik>
   );
-};
+}
 
 export default BudgetItemForm;

@@ -1,12 +1,14 @@
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import { initialIncomes } from './initialData';
 import BudgetItemsCollapse from './BudgetItemsCollapse';
 import { sortItemList } from './budgetItemHelpers';
 
-const Incomes: FC<{
+type IncomeProps = {
   onValuesChange: (newIncomeTotal: number) => void;
-}> = ({ onValuesChange }) => {
+};
+
+function Incomes({ onValuesChange }: IncomeProps) {
   const [incomeList, setIncomeList] = useState(initialIncomes);
 
   useEffect(() => {
@@ -49,6 +51,6 @@ const Incomes: FC<{
       onItemDelete={handleIncomeDelete}
     />
   );
-};
+}
 
 export default Incomes;

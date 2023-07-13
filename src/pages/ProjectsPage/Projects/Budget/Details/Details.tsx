@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { StyledDetailsDiv } from '../Budget.styles';
 import { Card, Col, Divider, Row, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
@@ -6,9 +6,9 @@ import Incomes from './Incomes';
 import Outcomes from './Outcomes';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
-const Details: FC<{ onValuesChange: (values: number) => void }> = ({
-  onValuesChange,
-}) => {
+type DetailsProps = { onValuesChange: (values: number) => void };
+
+function Details({ onValuesChange }: DetailsProps) {
   const { md } = useBreakpoint();
 
   const [incomes, setIncomes] = useState(0);
@@ -74,6 +74,6 @@ const Details: FC<{ onValuesChange: (values: number) => void }> = ({
       )}
     </StyledDetailsDiv>
   );
-};
+}
 
 export default Details;

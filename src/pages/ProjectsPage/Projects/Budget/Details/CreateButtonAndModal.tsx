@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Button, Tooltip } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
@@ -11,10 +11,7 @@ type CreateButtonAndModalProps = {
   type: BudgetItemType;
 };
 
-const CreateButtonAndModal: FC<CreateButtonAndModalProps> = ({
-  onNewItem,
-  type,
-}) => {
+function CreateButtonAndModal({ onNewItem, type }: CreateButtonAndModalProps) {
   const { lg } = useBreakpoint();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -54,6 +51,6 @@ const CreateButtonAndModal: FC<CreateButtonAndModalProps> = ({
       />
     </div>
   );
-};
+}
 
 export default CreateButtonAndModal;

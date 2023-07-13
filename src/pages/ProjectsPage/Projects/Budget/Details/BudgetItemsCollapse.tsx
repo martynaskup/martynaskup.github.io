@@ -2,7 +2,6 @@ import { Collapse } from 'antd';
 import CreateButtonAndModal from './CreateButtonAndModal';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import BudgetItemList from './BudgetItemList';
-import { FC } from 'react';
 import { budgetItemName, sortItemList } from './budgetItemHelpers';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
@@ -13,13 +12,14 @@ type BudgetItemsCollapseProps = {
   onItemUpdate: (updatedItem: BudgetItemData) => void;
   onItemDelete: (item: BudgetItemData) => void;
 };
-const BudgetItemsCollapse: FC<BudgetItemsCollapseProps> = ({
+
+function BudgetItemsCollapse({
   budgetItemType,
   itemList,
   onNewItemCreate,
   onItemUpdate,
   onItemDelete,
-}) => {
+}: BudgetItemsCollapseProps) {
   const { md } = useBreakpoint();
 
   return (
@@ -45,6 +45,6 @@ const BudgetItemsCollapse: FC<BudgetItemsCollapseProps> = ({
       }
     </Collapse>
   );
-};
+}
 
 export default BudgetItemsCollapse;

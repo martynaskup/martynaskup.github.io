@@ -2,7 +2,7 @@ import { BudgetItemData } from './BudgetItemTypes';
 import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment/moment';
 
-// TODO - initial values should come the data from LocalStorage or be fetched from an external database
+// TODO - initial values be the data coming from LocalStorage or be fetched from an external database
 const initialIncomes: BudgetItemData[] = [
   {
     id: uuidv4(),
@@ -18,14 +18,14 @@ const initialIncomes: BudgetItemData[] = [
   },
   {
     id: uuidv4(),
-    name: 'salary',
-    value: 2000,
+    name: 'cash from John',
+    value: 250.6,
     date: moment('2023-07-03'),
   },
   {
     id: uuidv4(),
-    name: 'lottery',
-    value: 500,
+    name: 'lottery 2',
+    value: 3500,
     date: moment('2023-07-15'),
   },
 ];

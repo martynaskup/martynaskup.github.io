@@ -1,6 +1,5 @@
 import { Modal } from 'antd';
 import BudgetItemForm from './BudgetItemForm';
-import { FC } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 import { BudgetItemData, BudgetItemType } from '../BudgetItemTypes';
 
@@ -12,13 +11,13 @@ type BudgetItemModalProps = {
   values?: BudgetItemData;
 };
 
-const BudgetItemModal: FC<BudgetItemModalProps> = ({
+function BudgetItemModal({
   isModalOpen,
   onModalSubmit,
   hideModal,
   type,
   values,
-}) => {
+}: BudgetItemModalProps) {
   const isInEditMode = !!values;
   return (
     <Modal
@@ -38,6 +37,6 @@ const BudgetItemModal: FC<BudgetItemModalProps> = ({
       />
     </Modal>
   );
-};
+}
 
 export default BudgetItemModal;

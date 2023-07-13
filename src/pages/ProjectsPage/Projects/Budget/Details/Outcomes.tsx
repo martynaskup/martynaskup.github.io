@@ -1,12 +1,14 @@
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
 import { initialOutcomes } from './initialData';
 import BudgetItemsCollapse from './BudgetItemsCollapse';
 import { sortItemList } from './budgetItemHelpers';
 
-const Outcomes: FC<{
+type OutcomesProps = {
   onValuesChange: (newOutcomeTotal: number) => void;
-}> = ({ onValuesChange }) => {
+};
+
+function Outcomes({ onValuesChange }: OutcomesProps) {
   const [outcomeList, setOutcomeList] = useState(initialOutcomes);
 
   useEffect(() => {
@@ -49,6 +51,6 @@ const Outcomes: FC<{
       onItemDelete={handleOutcomeDelete}
     />
   );
-};
+}
 
 export default Outcomes;
