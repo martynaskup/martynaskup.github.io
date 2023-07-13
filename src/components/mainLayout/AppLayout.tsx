@@ -1,13 +1,12 @@
-import React, { JSX, useState } from 'react';
+import React, { useState } from 'react';
 import { Layout } from 'antd';
-import './AppLayout.css';
 import AppSider from './AppSider';
 import AppContent from './AppContent';
 import AppFooter from './AppFooter';
 import { CollapseType } from 'antd/es/layout/Sider';
 import AppHeader from './AppHeader';
 
-function AppLayout(): JSX.Element {
+function AppLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const [currentCollapseType, setCurrentCollapseType] = useState<
     CollapseType | undefined

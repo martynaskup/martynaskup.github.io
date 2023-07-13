@@ -1,35 +1,33 @@
-import { FC } from 'react';
-import { Button, Layout, Space, Typography } from 'antd';
+import { Space, Typography } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
+import {
+  StyledAppHeaderLayout,
+  StyledMenuFoldingButton,
+} from './MainLayout.styles';
 
-const AppHeader: FC<{
+type AppHeaderProps = {
   collapsed: boolean;
   onMenuOpenerClick: () => void;
-}> = ({ collapsed, onMenuOpenerClick }) => {
+};
+
+function AppHeader({ collapsed, onMenuOpenerClick }: AppHeaderProps) {
   const { sm } = useBreakpoint();
+
   return (
-    <Layout.Header
-      className="site-layout-sub-header-background"
-      style={{ padding: 0, height: 'auto' }}
-    >
+    <StyledAppHeaderLayout>
       <Space align="baseline">
-        <Button
+        <StyledMenuFoldingButton
           type="text"
           icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           onClick={onMenuOpenerClick}
-          style={{
-            fontSize: '16px',
-            width: 64,
-            height: 64,
-          }}
         />
-        <Typography.Title level={5} style={{ fontSize: sm ? '16px' : '12px' }}>
+        <Typography.Title level={3} style={{ fontSize: sm ? '16px' : '12px' }}>
           Hello! I'm Martyna, React Developer. Welcome on my page!
         </Typography.Title>
       </Space>
-    </Layout.Header>
+    </StyledAppHeaderLayout>
   );
-};
+}
 
 export default AppHeader;

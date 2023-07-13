@@ -12,7 +12,7 @@ import paths from '../../routes/paths';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
-const AppMenu = () => {
+function AppMenu() {
   const projectItems: MenuItem[] = [
     {
       label: (
@@ -64,6 +64,6 @@ const AppMenu = () => {
       items={items}
     />
   );
-};
+}
 
 export default AppMenu;

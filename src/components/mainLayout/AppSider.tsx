@@ -1,17 +1,20 @@
-import React, { FC } from 'react';
-import { Avatar, Layout, Space, Typography } from 'antd';
+import React from 'react';
+import { Avatar, Layout, Typography } from 'antd';
 import AppMenu from './AppMenu';
 import { CollapseType } from 'antd/es/layout/Sider';
 import profilePic from '../../assets/images/profilePicture.jpeg';
+import { StyledSiderLogoSpace } from './MainLayout.styles';
 
-const AppSider: FC<{
+type AppSiderProps = {
   collapsed: boolean;
   collapseType: CollapseType | undefined;
   onCollapse: (
     shouldCollapse: boolean,
     collapseType: CollapseType | undefined
   ) => void;
-}> = ({ collapsed, collapseType, onCollapse }) => {
+};
+
+function AppSider({ collapsed, collapseType, onCollapse }: AppSiderProps) {
   return (
     <Layout.Sider
       breakpoint="lg"
@@ -27,19 +30,17 @@ const AppSider: FC<{
         }
       }}
     >
-      <div className="logo">
-        <Space>
-          <Avatar alt="profile picture" size="large" src={profilePic} />
-          <Typography.Text>
-            I'm Martyna
-            <br />
-            React Developer
-          </Typography.Text>
-        </Space>
-      </div>
+      <StyledSiderLogoSpace>
+        <Avatar alt="profile picture" size="large" src={profilePic} />
+        <Typography.Text>
+          I'm Martyna
+          <br />
+          React Developer
+        </Typography.Text>
+      </StyledSiderLogoSpace>
       <AppMenu />
     </Layout.Sider>
   );
-};
+}
 
 export default AppSider;
