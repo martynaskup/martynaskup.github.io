@@ -6,14 +6,14 @@ import ProjectsPage from '../pages/ProjectsPage/ProjectsPage';
 import ContactInfo from '../pages/ContactInfo';
 import NoRouteMatch from '../pages/NoRouteMatch';
 import paths from './paths';
-import ProjectsInfo from '../pages/ProjectsPage/ProjectsInfo';
+import ProjectsOverview from '../pages/ProjectsPage/ProjectsOverview';
 import PreviousPortfolio from '../pages/ProjectsPage/Projects/PreviousPortfolio';
 import Budget from '../pages/ProjectsPage/Projects/Budget/Budget';
 
 const projectsRoutes: RouteObject[] = [
   {
     path: paths.projectsPaths.base,
-    element: <ProjectsInfo />,
+    element: <ProjectsOverview />,
   },
   {
     path: paths.projectsPaths.previousPortfolio,

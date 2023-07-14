@@ -1,7 +1,7 @@
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import { Space, Typography } from 'antd';
 
-function ProjectsInfo() {
+function ProjectsOverview() {
   const { sm } = useBreakpoint();
 
   return (
@@ -27,4 +27,4 @@ function ProjectsInfo() {
   );
 }
 
-export default ProjectsInfo;
+export default ProjectsOverview;
