@@ -8,7 +8,7 @@ import NoRouteMatch from '../pages/NoRouteMatch';
 import paths from './paths';
 import ProjectsOverview from '../pages/ProjectsPage/ProjectsOverview';
 import PreviousPortfolio from '../pages/ProjectsPage/Projects/PreviousPortfolio';
-import Budget from '../pages/ProjectsPage/Projects/Budget/Budget';
+import Budget from '../pages/ProjectsPage/Projects/NewProjects/Budget/Budget';
 
 const projectsRoutes: RouteObject[] = [
   {
