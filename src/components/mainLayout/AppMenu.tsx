@@ -15,16 +15,20 @@ type MenuItem = Required<MenuProps>['items'][number];
 function AppMenu() {
   const projectItems: MenuItem[] = [
     {
+      label: <Link to={paths.projectsPaths.base}>Overview</Link>,
+      key: '3',
+    },
+    {
       label: (
         <Link to={paths.projectsPaths.previousPortfolio}>
           Previous Portfolio
         </Link>
       ),
-      key: '101',
+      key: '4',
     },
     {
       label: <Link to={paths.projectsPaths.budget}>Budget</Link>,
-      key: '102',
+      key: '5',
     },
   ];
 
@@ -40,14 +44,14 @@ function AppMenu() {
       icon: <UserOutlined />,
     },
     {
-      label: <Link to={paths.projectsPaths.base}>Projects</Link>,
+      label: 'Projects',
       key: 'sub1',
       icon: <ProjectOutlined />,
       children: projectItems,
     },
     {
       label: <Link to={paths.contactMe}>Contact me</Link>,
-      key: '4',
+      key: '6',
       icon: <ContactsOutlined />,
     },
   ];
