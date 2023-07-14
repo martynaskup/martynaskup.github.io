@@ -16,7 +16,7 @@ function AppMenu() {
   const projectItems: MenuItem[] = [
     {
       label: <Link to={paths.projectsPaths.base}>Overview</Link>,
-      key: '3',
+      key: '11',
     },
     {
       label: (
@@ -24,11 +24,23 @@ function AppMenu() {
           Previous Portfolio
         </Link>
       ),
-      key: '4',
+      key: '12',
     },
     {
-      label: <Link to={paths.projectsPaths.budget}>Budget</Link>,
-      key: '5',
+      label: 'New Projects',
+      key: 'sub2',
+      children: [
+        {
+          label: (
+            <Link to={paths.projectsPaths.newProjectsOverview}>Overview</Link>
+          ),
+          key: '21',
+        },
+        {
+          label: <Link to={paths.projectsPaths.budget}>Budget</Link>,
+          key: '22',
+        },
+      ],
     },
   ];
 
@@ -51,7 +63,7 @@ function AppMenu() {
     },
     {
       label: <Link to={paths.contactMe}>Contact me</Link>,
-      key: '6',
+      key: '3',
       icon: <ContactsOutlined />,
     },
   ];

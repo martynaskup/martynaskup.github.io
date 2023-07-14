@@ -21,8 +21,9 @@ function AppHeaderText() {
         return 'Budget app';
       case paths.base:
       case paths.home:
-      default:
         return "Hello! I'm Martyna, React Developer. Welcome on my page!";
+      default:
+        return 'Hmm...';
     }
   }
 
