@@ -7,9 +7,10 @@ function NoRouteMatch() {
       <h2>
         Sorry, I'm lost.
         <br />
-        There should be a page, but I cannot find it.
+        I cannot find the content of this page.
         <br />
-        Please, let Martyna know she should fix this.
+        If the URL is correct and there should be a page, please let Martyna
+        know she should fix this.
       </h2>
 
       <Image src={robot2} width={200} style={{ borderRadius: '50%' }} />
