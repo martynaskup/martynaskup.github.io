@@ -13,15 +13,20 @@ function Overview() {
       <div>
         <ProjectCard
           cover={<img alt="budget app screenshot" src={budgetImage} />}
-          techStack="Typescript, React, React Hooks, Ant Design, styled components, Ant Design (v4), uuid library (v4)"
+          techStack="Typescript, React, React Hooks, Ant Design, styled components, moment.js, Ant Design (v4), uuid library (v4)"
           title="Budget App"
           children={
             <>
               <Typography.Text>
-                With this app, you can track your monthly expenses and incomes.
+                With this app, you can track your expenses and incomes in the
+                current month.
               </Typography.Text>
               <ul>
                 <li>You can add, edit and delete your incomes and outcomes.</li>
+                <li>
+                  You cannot add incomes or outcomes which are dated before or
+                  after the current month.
+                </li>
                 <li>
                   The app will show you the total incomes, total outcomes and
                   the total amount left in the month. It will show also how many

@@ -75,7 +75,14 @@ function BudgetItemForm({
             name="date"
             label={`Date of the ${budgetItemNameLowecase(type)}`}
           >
-            <DatePicker name="date" allowClear={false} />
+            <DatePicker
+              name="date"
+              allowClear={false}
+              disabledDate={(date) =>
+                date.isBefore(moment().startOf('month')) ||
+                date.isAfter(moment().endOf('month'))
+              }
+            />
           </Form.Item>
           <Space style={{ width: '100%', justifyContent: 'end' }}>
             <SubmitButton onSubmit={() => props.submitForm()}>
