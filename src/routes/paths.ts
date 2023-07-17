@@ -1,5 +1,6 @@
 const generatePathToProject = (name: string) => `projects/${name}`;
 const generatePathToNewProject = (name: string) => `projects/new/${name}`;
+export const generatePathToPage = (pagePath: string) => `/${pagePath}`;
 
 const projectsPaths = {
   base: 'projects',

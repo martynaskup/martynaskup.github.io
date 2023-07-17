@@ -1,6 +1,9 @@
 import ProjectCard from './ProjectCard';
 import budgetImage from '../../../../assets/images/projectScreenshots/budget.png';
 import { StyledCarousel } from './Overview.styles';
+import { Link } from 'react-router-dom';
+import paths, { generatePathToPage } from '../../../../routes/paths';
+import { ArrowRightOutlined } from '@ant-design/icons';
 
 function Overview() {
   const contentStyle: React.CSSProperties = {
@@ -22,6 +25,11 @@ function Overview() {
           techStack="HTML, CSS, React, styled components, Ant Design... "
           title="Budget App"
           children="With this app, you can track your monthly expenses and incomes."
+          link={
+            <Link to={generatePathToPage(paths.projectsPaths.budget)}>
+              View <ArrowRightOutlined />
+            </Link>
+          }
         />
       </div>
       <div>
