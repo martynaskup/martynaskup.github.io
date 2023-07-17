@@ -9,6 +9,7 @@ import paths from './paths';
 import ProjectsOverview from '../pages/ProjectsPage/ProjectsOverview';
 import PreviousPortfolio from '../pages/ProjectsPage/Projects/PreviousPortfolio';
 import Budget from '../pages/ProjectsPage/Projects/NewProjects/Budget/Budget';
+import Overview from '../pages/ProjectsPage/Projects/NewProjects/Overview';
 
 const projectsRoutes: RouteObject[] = [
   {
@@ -19,6 +20,7 @@ const projectsRoutes: RouteObject[] = [
     path: paths.projectsPaths.previousPortfolio,
     element: <PreviousPortfolio />,
   },
+  { path: paths.projectsPaths.newProjectsOverview, element: <Overview /> },
   { path: paths.projectsPaths.budget, element: <Budget /> },
 ];
 
