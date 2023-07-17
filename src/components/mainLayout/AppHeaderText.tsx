@@ -19,6 +19,8 @@ function AppHeaderText() {
         return 'My previous portfolio';
       case paths.projectsPaths.budget:
         return 'Budget app';
+      case paths.projectsPaths.newProjectsOverview:
+        return 'Overview of new projects';
       case paths.base:
       case paths.home:
         return "Hello! I'm Martyna, React Developer. Welcome on my page!";
