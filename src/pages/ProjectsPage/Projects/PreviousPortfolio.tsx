@@ -49,11 +49,11 @@ const PreviousPortfolio = () => {
         <Typography.Text>
           Here is the link to my previous portfolio:{' '}
           <Link
-            to="https://snikerslala.github.io/"
+            to="https://snikerslala.github.io/previous-portfolio/"
             target="_blank"
             rel="noopener"
           >
-            https://snikerslala.github.io/
+            https://snikerslala.github.io/previous-portfolio/
           </Link>
         </Typography.Text>
       </Space>
