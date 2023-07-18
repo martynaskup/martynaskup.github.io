@@ -45,7 +45,6 @@ const PreviousPortfolio = () => {
           is still reflect my skills from the mentioned learning period of my
           life.
         </Typography.Text>
-        {/*TODO Update the link once the GitHub pages links are updated */}
         <Typography.Text>
           Here is the link to my previous portfolio:{' '}
           <Link
