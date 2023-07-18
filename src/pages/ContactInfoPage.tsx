@@ -2,7 +2,7 @@ import { Button, Space, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 
-function ContactInfo() {
+function ContactInfoPage() {
   return (
     <>
       <Space direction="vertical" size="large">
@@ -57,4 +57,4 @@ function ContactInfo() {
   );
 }
 
-export default ContactInfo;
+export default ContactInfoPage;

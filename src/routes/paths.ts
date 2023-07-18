@@ -15,7 +15,6 @@ const paths = {
   about: 'about',
   projectsPaths: projectsPaths,
   contactMe: 'contactMe',
-  noRouteMatch: '*',
 };
 
 export default paths;

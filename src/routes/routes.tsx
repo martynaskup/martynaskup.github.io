@@ -3,8 +3,8 @@ import AppLayout from '../components/mainLayout/AppLayout';
 import HomePage from '../pages/HomePage/HomePage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import ProjectsPage from '../pages/ProjectsPage/ProjectsPage';
-import ContactInfo from '../pages/ContactInfo';
-import NoRouteMatch from '../pages/NoRouteMatch';
+import ContactInfoPage from '../pages/ContactInfoPage';
+import NoRageFound404 from '../pages/NoRageFound404';
 import paths from './paths';
 import ProjectsOverview from '../pages/ProjectsPage/ProjectsOverview';
 import PreviousPortfolio from '../pages/ProjectsPage/Projects/PreviousPortfolio';
@@ -43,11 +43,11 @@ const routes: RouteObject[] = [
       },
       {
         path: paths.contactMe,
-        element: <ContactInfo />,
+        element: <ContactInfoPage />,
       },
       {
-        path: paths.noRouteMatch,
-        element: <NoRouteMatch />,
+        path: '*',
+        element: <NoRageFound404 />,
       },
     ],
   },
