@@ -11,7 +11,7 @@ const projectsPaths = {
 
 const paths = {
   base: '/',
-  home: '/',
+  home: '',
   about: 'about',
   projectsPaths: projectsPaths,
   contactMe: 'contactMe',
