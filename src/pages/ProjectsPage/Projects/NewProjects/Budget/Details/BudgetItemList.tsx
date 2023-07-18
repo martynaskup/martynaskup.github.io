@@ -7,7 +7,7 @@ import {
 } from '@ant-design/icons';
 import BudgetItemModal from './FormAndModal/BudgetItemModal';
 import { BudgetItemData, BudgetItemType } from './BudgetItemTypes';
-import { budgetItemName } from './budgetItemHelpers';
+import { budgetItemNameLowecase } from './budgetItemHelpers';
 
 type BudgetItemProps = {
   sourceData: BudgetItemData[];
@@ -93,9 +93,11 @@ function showDeleteConfirm(
   item: BudgetItemData
 ) {
   Modal.confirm({
-    title: `Are you sure you want to delete this?`,
+    title: `Are you sure you want to delete this ${budgetItemNameLowecase(
+      budgetItemType
+    )}?`,
     icon: <ExclamationCircleOutlined />,
-    content: `${budgetItemName(budgetItemType)}: ${item.name}: ${item.value} €`,
+    content: `${item.name}: ${item.value} €`,
     okText: 'Yes, delete',
     okType: 'danger',
     cancelText: 'No, cancel',
