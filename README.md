@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <a href="https://snikerslala.github.io">Martyna Skup - Portfolio</a>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center" style="font-size: 1.2rem;"><a href="https://snikerslala.github.io">https://snikerslala.github.io</a></p>
+<hr />
 
-## Available Scripts
+<p align="center" style="font-size: 1.2rem;">
+  Portfolio website built in React to showcase my skills and project samples, and provide information about me.
+</p>
 
-In the project directory, you can run:
+<hr />
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* HTML5
+* CSS3
+* [TypeScript](https://www.typescriptlang.org/)
+* [React 18](https://react.dev/)
+* [Ant Design v4 (`antd` React UI library)](https://4x.ant.design/)
+* [styled-components](https://styled-components.com/)
+* [React-Router v6](https://reactrouter.com/) (using BrowserRouter)
+* [Formik](https://formik.org/) & [Formik-antd](https://www.npmjs.com/package/formik-antd)
+* [Moment.js](https://momentjs.com/)
+* [Yup](https://github.com/jquense/yup) for value validation schema in forms
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<hr />
 
-### `npm test`
+## About
+My previous [portfolio website](https://snikerslala.github.io/previous-portfolio/) was built using HTML, CSS and JavaScript. As I became a React Developer, I created a new portfolio project using my current skills.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This portfolio website was built using React 18 and Typescript, based on antd components. Some of the antd components were styled with styled-components to match the UI design and become responsive for small and large screens. Forms used in Budget app, which is a part of this portfolio project, were created with Formik and Formik-antd to be compatible with the antd components. Form fields were validated with a Yup schema. Moment.js was used in date related components. Redirections to pages was achieved using React-Router v6.
 
-### `npm run build`
+This portfolio website includes not only the showcase of my skils and projects. It contains also general information about me - who I am and why I am a React/Front-end developer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  
+## How to view or run the project
 
-### `npm run eject`
+* To view the project, go to [https://snikerslala.github.io](https://snikerslala.github.io)
+* To run the project locally in the development mode, clone the repository and run `npm start`. <br /> Then open [http://localhost:3000](http://localhost:300000) to view it in the browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
