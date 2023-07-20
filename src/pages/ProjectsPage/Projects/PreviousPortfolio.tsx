@@ -42,7 +42,7 @@ const PreviousPortfolio = () => {
           Some of the projects were updated. Mostly in order to make the code
           cleaner or to use modern solutions, e.g. React Hooks instead of life
           cycle methods. However, the changes are minor and the most of the code
-          is still reflect my skills from the mentioned learning period of my
+          reflects still my skills from the mentioned learning period of my
           life.
         </Typography.Text>
         <Typography.Text>

@@ -22,6 +22,10 @@ function ProjectsOverview() {
           skills and technologies developed and learned in the last 3 years
           while I was working as a front-end developer.
         </Typography.Text>
+        <Typography.Text>
+          Please go to Menu, navigate to the Projects submenu and choose which
+          project would you like to view.
+        </Typography.Text>
       </Space>
     </Space>
   );
