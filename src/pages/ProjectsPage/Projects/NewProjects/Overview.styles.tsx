@@ -15,9 +15,14 @@ export const StyledCarousel = styled(Carousel)`
 
 export const StyledCard = styled(Card)`
   padding: 8px;
-  margin: 50px auto 0;
-  border-color: #001529;
+  margin: 50px auto 24px;
+  border: 1px ridge rgba(0, 21, 41, 0.3);
+  border-radius: 2px;
+  box-shadow: 4px 4px 8px rgba(0, 21, 41, 0.2);
   text-align: left;
+  .ant-card-body {
+    padding: 16px;
+  }
   .ant-card-head-title {
     font-size: 24px;
     text-align: center;
