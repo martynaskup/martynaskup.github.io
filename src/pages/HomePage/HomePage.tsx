@@ -15,7 +15,7 @@ function HomePage() {
         Welcome to my portfolio page!
       </Typography.Title>
       <Typography.Title>Hello! I'm Martyna, React developer</Typography.Title>
-      <Card style={{ maxWidth: md ? '700px' : '300px' }}>
+      <Card>
         <Space
           direction={md ? 'horizontal' : 'vertical'}
           size="large"

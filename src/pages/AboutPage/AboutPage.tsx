@@ -4,7 +4,7 @@ import AboutMainPage from './AboutMainPage';
 
 function AboutPage() {
   return (
-    <Space direction="vertical" size="middle">
+    <Space direction="vertical" size="middle" align="center">
       <AboutIntroPage />
       <AboutMainPage />
     </Space>

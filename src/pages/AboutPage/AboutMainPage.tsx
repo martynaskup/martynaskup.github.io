@@ -1,30 +1,16 @@
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
-import { StyledAboutRow } from './About.styles';
-import { Col } from 'antd';
-import MyImage from './MyImage';
 import AboutDetailsPage from './AboutDetailsPage';
+import Card from '../../components/shared/Card';
 
 function AboutMainPage() {
-  const { md } = useBreakpoint();
+  const { sm, md } = useBreakpoint();
 
-  return md ? (
-    <StyledAboutRow
-      justify="center"
-      align="middle"
-      gutter={{ sm: 32, md: 24, lg: 32 }}
-    >
-      <Col>
-        <MyImage />
-      </Col>
-      <Col span={14}>
-        <AboutDetailsPage />
-      </Col>
-    </StyledAboutRow>
-  ) : (
-    <Col>
-      <MyImage />
+  const maxCardWidth = md ? '600px' : sm ? '400px' : '300px';
+
+  return (
+    <Card width={maxCardWidth}>
       <AboutDetailsPage />
-    </Col>
+    </Card>
   );
 }
 
