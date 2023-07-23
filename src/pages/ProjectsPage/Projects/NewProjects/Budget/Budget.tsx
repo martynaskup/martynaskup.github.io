@@ -15,11 +15,11 @@ function Budget() {
   }, []);
 
   return (
-    <>
+    <div style={{ maxWidth: '900px', margin: '0 auto' }}>
       <AppTitle />
       <Summary sum={sum} />
       <Details onValuesChange={handleBudgetValuesChange} />
-    </>
+    </div>
   );
 }
 
