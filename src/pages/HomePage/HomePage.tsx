@@ -3,7 +3,8 @@ import React from 'react';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import HomeSteps from './HomeSteps';
 import MyImage from '../AboutPage/MyImage';
-import { StyledCard, StyledSpace } from './Home.styles';
+import { StyledSpace } from './Home.styles';
+import Card from '../../components/shared/Card';
 
 function HomePage() {
   const { md } = useBreakpoint();
@@ -14,7 +15,7 @@ function HomePage() {
         Welcome to my portfolio page!
       </Typography.Title>
       <Typography.Title>Hello! I'm Martyna, React developer</Typography.Title>
-      <StyledCard style={{ maxWidth: md ? '700px' : '300px' }}>
+      <Card style={{ maxWidth: md ? '700px' : '300px' }}>
         <Space
           direction={md ? 'horizontal' : 'vertical'}
           size="large"
@@ -23,7 +24,7 @@ function HomePage() {
           <MyImage />
           <HomeSteps />
         </Space>
-      </StyledCard>
+      </Card>
     </StyledSpace>
   );
 }
