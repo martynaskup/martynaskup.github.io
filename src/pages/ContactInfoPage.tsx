@@ -14,7 +14,7 @@ function ContactInfoPage() {
           Do you have a question or want to work together?
         </Typography.Title>
         <Card width={sm ? '400px' : '300px'}>
-          <Space direction="vertical" size="middle">
+          <Space direction="vertical" size="large">
             <div>
               <Typography.Text>Send me an e-mail at:</Typography.Text>
               <br />

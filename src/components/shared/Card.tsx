@@ -7,9 +7,10 @@ interface ThisCardProps extends CardProps {
 }
 
 function Card({ width, children }: ThisCardProps) {
-  const { md } = useBreakpoint();
+  const { sm, md } = useBreakpoint();
 
-  const cardWidth = md ? '700px' : '300px';
+  const cardWidth = md ? '600px' : sm ? '400px' : '300px';
+
   return (
     <StyledCard style={{ width: width ?? cardWidth }}>{children}</StyledCard>
   );
