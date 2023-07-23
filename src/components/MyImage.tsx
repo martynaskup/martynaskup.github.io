@@ -1,5 +1,5 @@
-import { StyledAboutImage } from './About.styles';
-import myImg from '../../assets/images/my_pic.jpg';
+import { StyledAboutImage } from '../pages/AboutPage/About.styles';
+import myImg from '../assets/images/my_pic.jpg';
 
 function MyImage() {
   return (

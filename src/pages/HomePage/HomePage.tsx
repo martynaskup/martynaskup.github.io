@@ -2,7 +2,7 @@ import { Space, Typography } from 'antd';
 import React from 'react';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import HomeSteps from './HomeSteps';
-import MyImage from '../AboutPage/MyImage';
+import MyImage from '../../components/MyImage';
 import { StyledSpace } from './Home.styles';
 import Card from '../../components/shared/Card';
 
