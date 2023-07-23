@@ -23,7 +23,7 @@ function AppHeaderText() {
         return 'Overview of new projects';
       case paths.base:
       case paths.home:
-        return "Hello! I'm Martyna, React Developer. Welcome on my page!";
+        return "Hello! I'm Martyna, React Developer. Welcome to my website!";
       default:
         return 'Hmm...';
     }
