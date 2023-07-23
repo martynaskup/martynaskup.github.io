@@ -31,7 +31,7 @@ export const StyledCard = styled(Card)`
   img {
     padding-top: 16px;
     padding-bottom: 16px;
-    border-bottom: 1px #001529 dotted;
+    border-bottom: 1px dotted rgba(0, 21, 41, 0.5);
   }
 
   .ant-card-meta {
