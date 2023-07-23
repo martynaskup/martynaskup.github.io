@@ -13,7 +13,7 @@ function ContactInfoPage() {
         <Typography.Title level={3}>
           Do you have a question or want to work together?
         </Typography.Title>
-        <Card width={sm ? '400px' : '300px'}>
+        <Card width={sm ? '400px' : '300px'} textAlign="center">
           <Space direction="vertical" size="large">
             <div>
               <Typography.Text>Send me an e-mail at:</Typography.Text>
