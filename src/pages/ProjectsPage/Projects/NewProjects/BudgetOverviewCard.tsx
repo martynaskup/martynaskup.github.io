@@ -1,16 +1,19 @@
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../../../../components/shared/ProjectCard';
 import budgetImage from '../../../../assets/images/projectScreenshots/budget.png';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import paths, { generatePathToPage } from '../../../../routes/paths';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
 function BudgetOverviewCard() {
+  const { sm } = useBreakpoint();
   return (
     <ProjectCard
       cover={<img alt="budget app screenshot" src={budgetImage} />}
       techStack="Typescript, React, React Hooks, Ant Design, styled components, moment.js, Ant Design (v4), uuid library (v4)"
       title="Budget App"
+      width={sm ? '500px' : '300px'}
       children={
         <>
           <Typography.Text>
