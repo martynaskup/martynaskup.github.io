@@ -11,35 +11,32 @@ const PreviousPortfolio = () => {
       <Card>
         <Space direction="vertical" size="large">
           <Typography.Text>
-            I built this portfolio in 2019. I spend that year learning web in
-            order to change my profession from German & Polish teacher and
-            translator to a front-end developer.
+            I made this portfolio in 2019. That year, I spent a lot of time
+            learning about web design. I wanted to change my job from a German &
+            Polish teacher and translator to a front-end developer.
           </Typography.Text>
           <Typography.Text>
-            I finished my IT-Bachelor studies in 2010 and I had still in my mind
-            that developing websites was one of the most interesting subjects
-            for me that time. I had this IT background and remembered a lot from
-            what I learned, but I knew that web development has been changing
-            rapidly in the last few years so I needed to put a lot of effort to
-            get my knowledge up to date.
+            In 2010, I completed my IT Bachelor's studies. I remembered that I
+            really enjoyed making websites at that time. I had some IT knowledge
+            and I remembered much of what I had learned. But, I knew that web
+            design had changed a lot over the years. So, I knew I had to work
+            hard to update my skills.
           </Typography.Text>
           <Typography.Text>
-            This portfolio and projects included in it show the result of my
-            learning from online courses and online documentations as well as my
-            own practice sessions.
+            This portfolio and the projects in it show what I learned from
+            online classes, documents, and my own practice.
           </Typography.Text>
           <Typography.Text>
-            After the learning period, I started working as Front-end developer
-            and since then I was improving my knowledge and expanded my skill
-            set. However, I think this portfolio can give you an overview of
-            what I was able to develop after a few months of self-learning.
+            After I learned enough, I started working as a Front-end developer.
+            Since then, I have been improving my skills and learning more. But,
+            I think this portfolio shows what I could do after only a few months
+            of teaching myself.
           </Typography.Text>
           <Typography.Text>
-            Some of the projects were updated. Mostly in order to make the code
-            cleaner or to use modern solutions, e.g. React Hooks instead of life
-            cycle methods. However, the changes are minor and the most of the
-            code reflects still my skills from the mentioned learning period of
-            my life.
+            I updated some of the projects. I mostly did this to make the code
+            cleaner or to use new solutions, like React Hooks instead of life
+            cycle methods. But, the changes are small and most of the code still
+            shows my skills from when I was teaching myself.
           </Typography.Text>
           <Typography.Text>
             Here is the link to my previous portfolio:{' '}
