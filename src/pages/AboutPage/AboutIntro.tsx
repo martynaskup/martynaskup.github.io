@@ -10,8 +10,8 @@ function AboutIntro() {
         from a Polish front-end developer!
       </Typography.Title>
       <Typography.Title level={5}>
-        I would like to share with you a bit of information about me, my
-        personal and professional life.
+        I would like to share a bit of information about my personal and
+        professional life with you.
       </Typography.Title>
     </>
   );

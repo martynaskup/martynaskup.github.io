@@ -11,10 +11,10 @@ function HomePage() {
 
   return (
     <StyledSpace direction="vertical" size="middle" align="center">
-      <Typography.Title level={2}>
-        Welcome to my portfolio page!
-      </Typography.Title>
       <Typography.Title>Hello! I'm Martyna, React developer</Typography.Title>
+      <Typography.Title level={2}>
+        Welcome to my portfolio website!
+      </Typography.Title>
       <Card width={md ? '700px' : '300px'}>
         <Space
           direction={md ? 'horizontal' : 'vertical'}

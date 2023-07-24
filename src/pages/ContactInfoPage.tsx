@@ -11,7 +11,7 @@ function ContactInfoPage() {
     <>
       <Space direction="vertical" size="large" align="center">
         <Typography.Title level={3}>
-          Do you have a question or want to work together?
+          Do you have any questions or would you like to collaborate?
         </Typography.Title>
         <Card width={sm ? '400px' : '300px'} textAlign="center">
           <Space direction="vertical" size="large">

@@ -6,7 +6,7 @@ const PreviousPortfolioInfoCard = () => {
   return (
     <Space direction="vertical" size="large" align="center">
       <ProjectCard
-        title="Information and link to my previous portfolio"
+        title="Info about my previous portfolio"
         children={
           <Space direction="vertical" size="large">
             <Typography.Text>
