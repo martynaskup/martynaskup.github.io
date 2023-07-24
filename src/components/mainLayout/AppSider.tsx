@@ -1,9 +1,10 @@
 import React from 'react';
-import { Avatar, Layout, Typography } from 'antd';
+import { Avatar, Layout } from 'antd';
 import AppMenu from './AppMenu';
 import { CollapseType } from 'antd/es/layout/Sider';
 import profilePic from '../../assets/images/profilePicture.jpeg';
 import { StyledSiderLogoSpace } from './MainLayout.styles';
+import Text from '../shared/Text';
 
 type AppSiderProps = {
   collapsed: boolean;
@@ -32,11 +33,15 @@ function AppSider({ collapsed, collapseType, onCollapse }: AppSiderProps) {
     >
       <StyledSiderLogoSpace>
         <Avatar alt="profile picture" size="large" src={profilePic} />
-        <Typography.Text>
-          I'm Martyna
-          <br />
-          React Developer
-        </Typography.Text>
+        <Text
+          children={
+            <>
+              I'm Martyna
+              <br />
+              React Developer
+            </>
+          }
+        />
       </StyledSiderLogoSpace>
       <AppMenu />
     </Layout.Sider>
