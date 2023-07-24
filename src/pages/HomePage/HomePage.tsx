@@ -18,7 +18,7 @@ function HomePage() {
       <Card width={md ? '700px' : '300px'}>
         <Space
           direction={md ? 'horizontal' : 'vertical'}
-          size="large"
+          size={md ? 'small' : 'large'}
           align="start"
         >
           <MyImage />
