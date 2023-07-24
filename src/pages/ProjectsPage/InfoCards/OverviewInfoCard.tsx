@@ -1,6 +1,6 @@
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import { Space } from 'antd';
-import ProjectCard from '../../../components/shared/ProjectCard';
+import ProjectInfoCard from '../../../components/shared/ProjectInfoCard';
 import Text from '../../../components/shared/Text';
 
 function OverviewInfoCard() {
@@ -8,7 +8,7 @@ function OverviewInfoCard() {
 
   return (
     <Space direction="vertical" size={sm ? 'large' : 'small'} align="center">
-      <ProjectCard
+      <ProjectInfoCard
         title="Curious about my coding skills?"
         children={
           <Space direction="vertical" size="middle">

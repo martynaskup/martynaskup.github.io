@@ -1,14 +1,14 @@
 import React from 'react';
 import { Image, Space, Typography } from 'antd';
 import robot from '../../../assets/images/craiyon_131139_robot-error.png';
-import ProjectCard from '../../../components/shared/ProjectCard';
+import ProjectInfoCard from '../../../components/shared/ProjectInfoCard';
 import paths from '../../../routes/paths';
 import { Link } from 'react-router-dom';
 import Text from '../../../components/shared/Text';
 
 function ProjectPlaceholderInfoCard() {
   return (
-    <ProjectCard
+    <ProjectInfoCard
       textAlign="center"
       title="Hi there!"
       cover={

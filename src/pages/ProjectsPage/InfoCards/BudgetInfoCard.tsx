@@ -1,4 +1,4 @@
-import ProjectCard from '../../../components/shared/ProjectCard';
+import ProjectInfoCard from '../../../components/shared/ProjectInfoCard';
 import budgetImage from '../../../assets/images/projectScreenshots/budget.png';
 import { Link } from 'react-router-dom';
 import paths, { generatePathToPage } from '../../../routes/paths';
@@ -9,7 +9,7 @@ import Text from '../../../components/shared/Text';
 function BudgetInfoCard() {
   const { sm } = useBreakpoint();
   return (
-    <ProjectCard
+    <ProjectInfoCard
       title="Budget App"
       width={sm ? '500px' : '300px'}
       cover={<img alt="budget app screenshot" src={budgetImage} />}

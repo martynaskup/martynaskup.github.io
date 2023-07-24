@@ -1,12 +1,12 @@
 import { Space } from 'antd';
 import { Link } from 'react-router-dom';
-import ProjectCard from '../../../components/shared/ProjectCard';
+import ProjectInfoCard from '../../../components/shared/ProjectInfoCard';
 import Text from '../../../components/shared/Text';
 
 const PreviousPortfolioInfoCard = () => {
   return (
     <Space direction="vertical" size="large" align="center">
-      <ProjectCard
+      <ProjectInfoCard
         title="Info about my previous portfolio"
         children={
           <Space direction="vertical" size="large">
