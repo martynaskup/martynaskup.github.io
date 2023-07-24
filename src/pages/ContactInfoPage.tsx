@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 import Card from '../components/shared/Card';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
+import Text from '../components/shared/Text';
 
 function ContactInfoPage() {
   const { sm } = useBreakpoint();
@@ -16,17 +17,23 @@ function ContactInfoPage() {
         <Card width={sm ? '400px' : '300px'} textAlign="center">
           <Space direction="vertical" size="large">
             <div>
-              <Typography.Text>Send me an e-mail at:</Typography.Text>
+              <Text children="Send me an e-mail at:" />
               <br />
               <Link to="mailto: martyna.skup@yahoo.de">
                 martyna.skup@yahoo.de
               </Link>
             </div>
             <div>
-              <Typography.Text>
-                or contact me via <br /> my professional online profiles:
-              </Typography.Text>
-              <br />
+              <Text
+                children={
+                  <>
+                    or contact me via
+                    <br />
+                    my professional online profiles:
+                    <br />
+                  </>
+                }
+              />
               <Space size="large">
                 <Link
                   to="https://github.com/snikerslala"
@@ -43,7 +50,7 @@ function ContactInfoPage() {
                     }
                   />
                   <br />
-                  <Typography.Text>GitHub</Typography.Text>
+                  <Text children="GitHub" />
                 </Link>
                 <Link
                   to="https://www.linkedin.com/in/martynaskup/"
@@ -60,7 +67,7 @@ function ContactInfoPage() {
                     }
                   />
                   <br />
-                  <Typography.Text>LinkedIn</Typography.Text>
+                  <Text children="LinkedIn" />
                 </Link>
               </Space>
             </div>
