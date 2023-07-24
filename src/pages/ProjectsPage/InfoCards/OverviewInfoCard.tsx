@@ -8,7 +8,7 @@ function OverviewInfoCard() {
   return (
     <Space direction="vertical" size={sm ? 'large' : 'small'} align="center">
       <ProjectCard
-        title="Are you curious about my coding skills?"
+        title="Curious about my coding skills?"
         children={
           <Space direction="vertical" size="middle">
             <Typography.Text>
