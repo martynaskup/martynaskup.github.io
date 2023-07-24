@@ -14,7 +14,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 const projectItems: MenuItem[] = [
   {
-    label: <Link to={paths.projectsPaths.base}>Overview</Link>,
+    label: <Link to={paths.projectsPaths.overview}>Overview</Link>,
     key: menuKeys.projects.overview,
   },
   {
@@ -24,20 +24,8 @@ const projectItems: MenuItem[] = [
     key: menuKeys.projects.previousPortfolio,
   },
   {
-    label: 'New Projects',
-    key: 'sub2',
-    children: [
-      {
-        label: (
-          <Link to={paths.projectsPaths.newProjectsOverview}>Overview</Link>
-        ),
-        key: menuKeys.projects.newProjects.overview,
-      },
-      {
-        label: <Link to={paths.projectsPaths.budget}>Budget</Link>,
-        key: menuKeys.projects.newProjects.budget,
-      },
-    ],
+    label: <Link to={paths.projectsPaths.budget}>Budget</Link>,
+    key: menuKeys.projects.budget,
   },
 ];
 

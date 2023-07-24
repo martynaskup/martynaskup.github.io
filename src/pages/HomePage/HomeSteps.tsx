@@ -15,8 +15,8 @@ function HomeSteps() {
       <hr />
       <Typography.Text>
         Then check out some of my{' '}
-        <Link to={paths.projectsPaths.base}>projects</Link> built with different
-        tech stack. It will give you an overview of some of my skills.
+        <Link to={paths.projectsPaths.overview}>projects</Link> built with
+        different tech stack. It will give you an overview of some of my skills.
       </Typography.Text>
       <hr />
       <Typography.Text>

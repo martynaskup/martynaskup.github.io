@@ -6,15 +6,11 @@ export const menuKeys = {
   contactMe: '3',
   subMenus: {
     projects: 'sub1',
-    newProjects: 'sub2',
   },
   projects: {
     overview: '11',
     previousPortfolio: '12',
-    newProjects: {
-      overview: '21',
-      budget: '22',
-    },
+    budget: '13',
   },
 };
 
@@ -34,14 +30,12 @@ function getSelectedKeys(locationPath: string) {
       return [menuKeys.home];
     case paths.contactMe:
       return [menuKeys.contactMe];
-    case paths.projectsPaths.base:
+    case paths.projectsPaths.overview:
       return [menuKeys.projects.overview];
     case paths.projectsPaths.previousPortfolio:
       return [menuKeys.projects.previousPortfolio];
-    case paths.projectsPaths.newProjectsOverview:
-      return [menuKeys.projects.newProjects.overview];
     case paths.projectsPaths.budget:
-      return [menuKeys.projects.newProjects.budget];
+      return [menuKeys.projects.budget];
     default:
       return [menuKeys.home];
   }
@@ -49,12 +43,10 @@ function getSelectedKeys(locationPath: string) {
 
 function getOpenKeys(locationPath: string) {
   switch (locationPath) {
-    case paths.projectsPaths.base:
+    case paths.projectsPaths.overview:
     case paths.projectsPaths.previousPortfolio:
-      return [menuKeys.subMenus.projects];
-    case paths.projectsPaths.newProjectsOverview:
     case paths.projectsPaths.budget:
-      return [menuKeys.subMenus.projects, menuKeys.subMenus.newProjects];
+      return [menuKeys.subMenus.projects];
     default:
       return [];
   }
