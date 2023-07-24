@@ -1,5 +1,5 @@
 import { StyledCarousel } from './Overview.styles';
-import NewProjectPlaceholder from './InfoCards/NewProjectPlaceholder';
+import ProjectPlaceholderInfoCard from './InfoCards/ProjectPlaceholderInfoCard';
 import BudgetInfoCard from './InfoCards/BudgetInfoCard';
 import OverviewInfoCard from './InfoCards/OverviewInfoCard';
 import PreviousPortfolioInfoCard from './InfoCards/PreviousPortfolioInfoCard';
@@ -17,7 +17,7 @@ function Overview() {
         <BudgetInfoCard />
       </div>
       <div>
-        <NewProjectPlaceholder />
+        <ProjectPlaceholderInfoCard />
       </div>
     </StyledCarousel>
   );
