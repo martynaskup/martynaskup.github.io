@@ -15,18 +15,17 @@ function OverviewInfoCard() {
               In this section, I would like to present a few projects to you.
             </Typography.Text>
             <Typography.Text>
-              Some of them are older and are a result of my learning process
-              from the time when I was working on becoming a front-end
-              developer.
+              Some of them are older and are the result of my learning process
+              from when I was working on becoming a front-end developer.
             </Typography.Text>
             <Typography.Text>
-              The others are newer, created this year. I used in these projects
-              the skills and technologies developed and learned in the last 3
-              years while I was working as a front-end developer.
+              The others are newer, created this year. I utilized the skills and
+              technologies developed and learned over the last 3 years while
+              working as a front-end developer.
             </Typography.Text>
             <Typography.Text>
-              Please go to Menu, navigate to the Projects submenu and choose
-              which project would you like to view.
+              To explore the projects, please go to the Menu, navigate to the
+              Projects submenu, and choose which project you would like to view.
             </Typography.Text>
           </Space>
         }
