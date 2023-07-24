@@ -10,10 +10,15 @@ function BudgetInfoCard() {
   const { sm } = useBreakpoint();
   return (
     <ProjectCard
-      cover={<img alt="budget app screenshot" src={budgetImage} />}
-      techStack="Typescript, React, React Hooks, Ant Design, styled components, moment.js, Ant Design (v4), uuid library (v4)"
       title="Budget App"
       width={sm ? '500px' : '300px'}
+      cover={<img alt="budget app screenshot" src={budgetImage} />}
+      link={
+        <Link to={generatePathToPage(paths.projectsPaths.budget)}>
+          View <ArrowRightOutlined />
+        </Link>
+      }
+      techStack="Typescript, React, React Hooks, Ant Design, styled components, moment.js, Ant Design (v4), uuid library (v4)"
       children={
         <>
           <Text children="With this app, you can track your expenses and incomes for the current month" />
@@ -44,11 +49,6 @@ function BudgetInfoCard() {
             }
           />
         </>
-      }
-      link={
-        <Link to={generatePathToPage(paths.projectsPaths.budget)}>
-          View <ArrowRightOutlined />
-        </Link>
       }
     />
   );
