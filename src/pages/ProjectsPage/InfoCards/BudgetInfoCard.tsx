@@ -17,27 +17,27 @@ function BudgetInfoCard() {
       children={
         <>
           <Typography.Text>
-            With this app, you can track your expenses and incomes in the
-            current month.
+            With this app, you can track your expenses and incomes for the
+            current month
           </Typography.Text>
           <ul>
-            <li>You can add, edit and delete your incomes and outcomes.</li>
+            <li>You can add, edit, and delete your incomes and expenses.</li>
             <li>
-              You cannot add incomes or outcomes which are dated before or after
-              the current month.
+              The app restricts adding incomes or expenses with dates before or
+              after the current month.
             </li>
             <li>
-              The app will show you the total incomes, total outcomes and the
-              total amount left in the month. It will show also how many days
-              are left until the end of the month.
+              It will display the total incomes, total expenses, and the
+              remaining balance for the month. Additionally, the app will show
+              the number of days left until the end of the month.
             </li>
             <li>
-              The app contains budget examples by design, as it is a demo
-              version.
+              The app includes budget examples as part of its design, serving as
+              a demo version
             </li>
             <li>
-              As it is a demo app, data is not stored in any external database
-              nor in the local storage.
+              Being a demo app, data is not stored in any external database or
+              local storage.
             </li>
           </ul>
         </>
