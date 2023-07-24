@@ -1,14 +1,12 @@
 import React from 'react';
 import { Image, Space, Typography } from 'antd';
 import robot from '../../../assets/images/craiyon_131139_robot-error.png';
-import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import ProjectCard from '../../../components/shared/ProjectCard';
 import paths from '../../../routes/paths';
 import { Link } from 'react-router-dom';
+import Text from '../../../components/shared/Text';
 
 function ProjectPlaceholderInfoCard() {
-  const { sm } = useBreakpoint();
-
   return (
     <ProjectCard
       textAlign="center"
@@ -32,18 +30,16 @@ function ProjectPlaceholderInfoCard() {
         </Space>
       }
       children={
-        <Space
-          direction="vertical"
-          size="middle"
-          style={{ fontSize: sm ? '16px' : 'inherit' }}
-        >
-          <Typography.Text>
-            Martyna didn't publish the next portfolio project (yet).
-          </Typography.Text>
-          <Typography.Text>
-            If you wish, you can <Link to={paths.contactMe}>contact</Link> her
-            and ask if and when she'll publish here something.
-          </Typography.Text>
+        <Space direction="vertical" size="middle">
+          <Text children="Martyna didn't publish the next portfolio project (yet)." />
+          <Text
+            children={
+              <>
+                If you wish, you can <Link to={paths.contactMe}>contact</Link>{' '}
+                her and ask if and when she'll publish here something.
+              </>
+            }
+          />
         </Space>
       }
     />
