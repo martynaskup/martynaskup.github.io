@@ -1,5 +1,5 @@
 import { Image, Space, Typography } from 'antd';
-import robot from '../../../../assets/images/craiyon_131139_robot-error.png';
+import robot from '../../../assets/images/craiyon_131139_robot-error.png';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
 function NewProjectPlaceholder() {

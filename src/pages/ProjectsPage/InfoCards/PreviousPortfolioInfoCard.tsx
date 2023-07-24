@@ -2,7 +2,7 @@ import { Space, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import ProjectCard from '../../../components/shared/ProjectCard';
 
-const PreviousPortfolio = () => {
+const PreviousPortfolioInfoCard = () => {
   return (
     <Space direction="vertical" size="large" align="center">
       <ProjectCard
@@ -54,4 +54,4 @@ const PreviousPortfolio = () => {
   );
 };
 
-export default PreviousPortfolio;
+export default PreviousPortfolioInfoCard;

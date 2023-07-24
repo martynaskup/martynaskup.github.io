@@ -1,8 +1,8 @@
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import { Space, Typography } from 'antd';
-import ProjectCard from '../../components/shared/ProjectCard';
+import ProjectCard from '../../../components/shared/ProjectCard';
 
-function ProjectsOverview() {
+function OverviewInfoCard() {
   const { sm } = useBreakpoint();
 
   return (
@@ -35,4 +35,4 @@ function ProjectsOverview() {
   );
 }
 
-export default ProjectsOverview;
+export default OverviewInfoCard;

@@ -1,20 +1,20 @@
 import { StyledCarousel } from './Overview.styles';
-import NewProjectPlaceholder from './NewProjectPlaceholder';
-import BudgetOverviewCard from './BudgetOverviewCard';
-import ProjectsOverview from '../../ProjectsOverview';
-import PreviousPortfolio from '../PreviousPortfolio';
+import NewProjectPlaceholder from './InfoCards/NewProjectPlaceholder';
+import BudgetInfoCard from './InfoCards/BudgetInfoCard';
+import OverviewInfoCard from './InfoCards/OverviewInfoCard';
+import PreviousPortfolioInfoCard from './InfoCards/PreviousPortfolioInfoCard';
 
 function Overview() {
   return (
     <StyledCarousel dotPosition="top" dots={true}>
       <div style={{ margin: '50px auto 24px' }}>
-        <ProjectsOverview />
+        <OverviewInfoCard />
       </div>
       <div>
-        <PreviousPortfolio />
+        <PreviousPortfolioInfoCard />
       </div>
       <div>
-        <BudgetOverviewCard />
+        <BudgetInfoCard />
       </div>
       <div>
         <NewProjectPlaceholder />

@@ -1,12 +1,12 @@
-import ProjectCard from '../../../../components/shared/ProjectCard';
-import budgetImage from '../../../../assets/images/projectScreenshots/budget.png';
+import ProjectCard from '../../../components/shared/ProjectCard';
+import budgetImage from '../../../assets/images/projectScreenshots/budget.png';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import paths, { generatePathToPage } from '../../../../routes/paths';
+import paths, { generatePathToPage } from '../../../routes/paths';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 
-function BudgetOverviewCard() {
+function BudgetInfoCard() {
   const { sm } = useBreakpoint();
   return (
     <ProjectCard
@@ -51,4 +51,4 @@ function BudgetOverviewCard() {
   );
 }
 
-export default BudgetOverviewCard;
+export default BudgetInfoCard;

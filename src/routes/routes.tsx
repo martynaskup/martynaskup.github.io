@@ -6,19 +6,19 @@ import ProjectsPage from '../pages/ProjectsPage/ProjectsPage';
 import ContactInfoPage from '../pages/ContactInfoPage';
 import NoRageFound404 from '../pages/NoRageFound404';
 import paths from './paths';
-import ProjectsOverview from '../pages/ProjectsPage/ProjectsOverview';
-import PreviousPortfolio from '../pages/ProjectsPage/Projects/PreviousPortfolio';
+import OverviewInfoCard from '../pages/ProjectsPage/InfoCards/OverviewInfoCard';
+import PreviousPortfolioInfoCard from '../pages/ProjectsPage/InfoCards/PreviousPortfolioInfoCard';
 import Budget from '../projects/Budget/Budget';
-import Overview from '../pages/ProjectsPage/Projects/NewProjects/Overview';
+import Overview from '../pages/ProjectsPage/Overview';
 
 const projectsRoutes: RouteObject[] = [
   {
     path: paths.projectsPaths.base,
-    element: <ProjectsOverview />,
+    element: <OverviewInfoCard />,
   },
   {
     path: paths.projectsPaths.previousPortfolio,
-    element: <PreviousPortfolio />,
+    element: <PreviousPortfolioInfoCard />,
   },
   { path: paths.projectsPaths.newProjectsOverview, element: <Overview /> },
   { path: paths.projectsPaths.budget, element: <Budget /> },
