@@ -10,20 +10,21 @@ function HomeSteps() {
       <Typography.Text>
         I encourage you to take a look at a few pieces of information{' '}
         <Link to={paths.about}>about me</Link> first. You will find out who I
-        am, why I code and what I do when it's not the coding-time.
+        am, why I code, and what I do when it's not coding time.
       </Typography.Text>
       <hr />
       <Typography.Text>
-        Then check out some of my{' '}
-        <Link to={paths.projectsPaths.overview}>projects</Link> built with
-        different tech stack. It will give you an overview of some of my skills.
+        Afterward, feel free to check out some of{' '}
+        <Link to={paths.projectsPaths.overview}>my projects</Link> built with
+        different tech stacks. It will give you an overview of some of my
+        skills.
       </Typography.Text>
       <hr />
       <Typography.Text>
-        I also left a few options for you to{' '}
+        I have also provided a few options for you to{' '}
         <Link to={paths.contactMe}>contact me</Link>. Feel free to use them to
-        let me know you would like to cooperate with me, have a question or tell
-        me something nice.
+        let me know if you would like to cooperate with me, have a question, or
+        simply want to share something nice.
       </Typography.Text>
     </StyledSpace>
   );
