@@ -8,7 +8,7 @@ import NoRageFound404 from '../pages/NoRageFound404';
 import paths from './paths';
 import ProjectsOverview from '../pages/ProjectsPage/ProjectsOverview';
 import PreviousPortfolio from '../pages/ProjectsPage/Projects/PreviousPortfolio';
-import Budget from '../pages/ProjectsPage/Projects/NewProjects/Budget/Budget';
+import Budget from '../projects/Budget/Budget';
 import Overview from '../pages/ProjectsPage/Projects/NewProjects/Overview';
 
 const projectsRoutes: RouteObject[] = [
