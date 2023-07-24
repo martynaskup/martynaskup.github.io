@@ -3,6 +3,7 @@ import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import { ReactNode } from 'react';
 import { StyledCard } from './ProjectCard.styles';
 import Text from './Text';
+import Title from './Title';
 
 type ProjectCardProps = {
   techStack?: string;
@@ -26,6 +27,7 @@ function ProjectCard({
   return (
     <StyledCard
       {...props}
+      title={<Title level={3} children={props.title} />}
       extra={<Button key={1}>{link}</Button>}
       style={{ width: width ?? cardWidth, textAlign: textAlign ?? 'left' }}
     >
