@@ -4,7 +4,7 @@ import AboutDetailsCard from './AboutDetailsCard';
 
 function AboutPage() {
   return (
-    <Space direction="vertical" size="middle" align="center">
+    <Space direction="vertical" size="large" align="center">
       <AboutIntro />
       <AboutDetailsCard />
     </Space>
