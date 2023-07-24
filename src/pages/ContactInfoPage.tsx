@@ -1,9 +1,10 @@
-import { Button, Space, Typography } from 'antd';
+import { Button, Space } from 'antd';
 import { Link } from 'react-router-dom';
 import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 import Card from '../components/shared/Card';
 import useBreakpoint from 'antd/lib/grid/hooks/useBreakpoint';
 import Text from '../components/shared/Text';
+import Title from '../components/shared/Title';
 
 function ContactInfoPage() {
   const { sm } = useBreakpoint();
@@ -11,9 +12,10 @@ function ContactInfoPage() {
   return (
     <>
       <Space direction="vertical" size="large" align="center">
-        <Typography.Title level={3}>
-          Do you have any questions or would you like to collaborate?
-        </Typography.Title>
+        <Title
+          level={3}
+          children="Do you have any questions or would you like to collaborate?"
+        />
         <Card width={sm ? '400px' : '300px'} textAlign="center">
           <Space direction="vertical" size="large">
             <div>
