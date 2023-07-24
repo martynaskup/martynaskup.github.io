@@ -4,7 +4,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import ProjectsPage from '../pages/ProjectsPage/ProjectsPage';
 import ContactInfoPage from '../pages/ContactInfoPage';
-import NoRageFound404 from '../pages/NoRageFound404';
+import NoPageFound404 from '../pages/NoPageFound404';
 import paths from './paths';
 import PreviousPortfolioInfoCard from '../pages/ProjectsPage/InfoCards/PreviousPortfolioInfoCard';
 import Budget from '../projects/Budget/Budget';
@@ -45,7 +45,7 @@ const routes: RouteObject[] = [
       },
       {
         path: '*',
-        element: <NoRageFound404 />,
+        element: <NoPageFound404 />,
       },
     ],
   },

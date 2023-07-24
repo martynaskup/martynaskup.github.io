@@ -1,7 +1,7 @@
 import robot2 from '../assets/images/craiyon_131139_robot-error.png';
 import { Image } from 'antd';
 
-function NoRageFound404() {
+function NoPageFound404() {
   return (
     <div style={{ marginTop: '32px' }}>
       <h2>
@@ -17,4 +17,4 @@ function NoRageFound404() {
     </div>
   );
 }
-export default NoRageFound404;
+export default NoPageFound404;
