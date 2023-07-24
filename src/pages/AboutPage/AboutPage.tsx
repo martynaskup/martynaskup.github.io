@@ -1,12 +1,12 @@
 import { Space } from 'antd';
-import AboutIntroPage from './AboutIntroPage';
-import AboutMainPage from './AboutMainPage';
+import AboutIntro from './AboutIntro';
+import AboutDetailsCard from './AboutDetailsCard';
 
 function AboutPage() {
   return (
     <Space direction="vertical" size="middle" align="center">
-      <AboutIntroPage />
-      <AboutMainPage />
+      <AboutIntro />
+      <AboutDetailsCard />
     </Space>
   );
 }
