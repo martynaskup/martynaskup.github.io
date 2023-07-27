@@ -9,8 +9,9 @@ export const menuKeys = {
   },
   projects: {
     overview: '11',
-    previousPortfolio: '12',
-    budget: '13',
+    thisPortfolio: '12',
+    previousPortfolio: '13',
+    budget: '14',
   },
 };
 
@@ -44,6 +45,7 @@ function getSelectedKeys(locationPath: string) {
 function getOpenKeys(locationPath: string) {
   switch (locationPath) {
     case paths.projectsPaths.overview:
+    case paths.projectsPaths.thisPortfolio:
     case paths.projectsPaths.previousPortfolio:
     case paths.projectsPaths.budget:
       return [menuKeys.subMenus.projects];

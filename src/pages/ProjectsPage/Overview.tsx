@@ -3,7 +3,7 @@ import ProjectPlaceholderInfoCard from './InfoCards/ProjectPlaceholderInfoCard';
 import BudgetInfoCard from './InfoCards/BudgetInfoCard';
 import OverviewInfoCard from './InfoCards/OverviewInfoCard';
 import PreviousPortfolioInfoCard from './InfoCards/PreviousPortfolioInfoCard';
-import NewPortfolioInfoCard from './InfoCards/NewPortfolioInfoCard';
+import ThisPortfolioInfoCard from './InfoCards/ThisPortfolioInfoCard';
 
 function Overview() {
   return (
@@ -12,7 +12,7 @@ function Overview() {
         <OverviewInfoCard />
       </div>
       <div>
-        <NewPortfolioInfoCard />
+        <ThisPortfolioInfoCard />
       </div>
       <div>
         <PreviousPortfolioInfoCard />

@@ -9,11 +9,16 @@ import paths from './paths';
 import PreviousPortfolioInfoCard from '../pages/ProjectsPage/InfoCards/PreviousPortfolioInfoCard';
 import Budget from '../projects/Budget/Budget';
 import Overview from '../pages/ProjectsPage/Overview';
+import ThisPortfolioInfoCard from '../pages/ProjectsPage/InfoCards/ThisPortfolioInfoCard';
 
 const projectsRoutes: RouteObject[] = [
   {
     path: paths.projectsPaths.overview,
     element: <Overview />,
+  },
+  {
+    path: paths.projectsPaths.thisPortfolio,
+    element: <ThisPortfolioInfoCard />,
   },
   {
     path: paths.projectsPaths.previousPortfolio,

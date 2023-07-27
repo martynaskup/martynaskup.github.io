@@ -3,7 +3,7 @@ import ProjectInfoCard from '../../../components/shared/ProjectInfoCard';
 import Text from '../../../components/shared/Text';
 import { Link } from 'react-router-dom';
 
-function NewPortfolioInfoCard() {
+function ThisPortfolioInfoCard() {
   return (
     <Space direction="vertical" size="large" align="center">
       <ProjectInfoCard
@@ -54,4 +54,4 @@ function NewPortfolioInfoCard() {
   );
 }
 
-export default NewPortfolioInfoCard;
+export default ThisPortfolioInfoCard;

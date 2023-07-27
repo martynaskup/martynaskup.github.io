@@ -18,6 +18,10 @@ const projectItems: MenuItem[] = [
     key: menuKeys.projects.overview,
   },
   {
+    label: <Link to={paths.projectsPaths.thisPortfolio}>This Portfolio</Link>,
+    key: menuKeys.projects.thisPortfolio,
+  },
+  {
     label: (
       <Link to={paths.projectsPaths.previousPortfolio}>Previous Portfolio</Link>
     ),

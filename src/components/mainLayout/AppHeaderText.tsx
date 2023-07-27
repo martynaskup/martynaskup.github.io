@@ -15,6 +15,8 @@ function AppHeaderText() {
         return 'Contact Information';
       case paths.projectsPaths.overview:
         return 'Projects Overview';
+      case paths.projectsPaths.thisPortfolio:
+        return 'This Portfolio';
       case paths.projectsPaths.previousPortfolio:
         return 'My Previous Portfolio';
       case paths.projectsPaths.budget:

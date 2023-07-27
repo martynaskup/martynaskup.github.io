@@ -3,6 +3,7 @@ export const generatePathToPage = (pagePath: string) => `/${pagePath}`;
 
 const projectsPaths = {
   overview: 'projects',
+  thisPortfolio: generatePathToProject('thisPortfolio'),
   previousPortfolio: generatePathToProject('previousPortfolio'),
   budget: generatePathToProject('budget'),
 };
