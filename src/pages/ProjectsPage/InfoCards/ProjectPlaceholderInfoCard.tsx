@@ -10,7 +10,7 @@ function ProjectPlaceholderInfoCard() {
   return (
     <ProjectInfoCard
       textAlign="center"
-      title="Hi there!"
+      title="Hi There!"
       cover={
         <Space direction="vertical" style={{ margin: '24px 0' }}>
           <Typography.Title level={4}>

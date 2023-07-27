@@ -6,7 +6,7 @@ function AboutIntro() {
     <Space direction="vertical" size={10}>
       <Space direction="vertical" size={2}>
         <Title level={2} children="Hello! Hallo! Cześć! and... Ahoj!" />
-        <Title level={3} children="from a Polish front-end developer!" />
+        <Title level={3} children="From a Polish Front-end Developer!" />
       </Space>
       <Title
         level={5}

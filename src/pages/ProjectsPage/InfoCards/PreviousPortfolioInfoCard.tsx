@@ -7,7 +7,7 @@ const PreviousPortfolioInfoCard = () => {
   return (
     <Space direction="vertical" size="large" align="center">
       <ProjectInfoCard
-        title="Info about my previous portfolio"
+        title="About my Previous Portfolio"
         children={
           <Space direction="vertical" size="large">
             <Text

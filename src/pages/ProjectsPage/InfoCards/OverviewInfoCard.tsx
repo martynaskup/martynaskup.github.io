@@ -9,7 +9,7 @@ function OverviewInfoCard() {
   return (
     <Space direction="vertical" size={sm ? 'large' : 'small'} align="center">
       <ProjectInfoCard
-        title="Curious about my coding skills?"
+        title="My Coding Skills"
         children={
           <Space direction="vertical" size="middle">
             <Text children="In this section, I would like to present a few projects to you." />

@@ -10,18 +10,18 @@ function AppHeaderText() {
   function textToRender(): string {
     switch (appLocation.pathname.substring(1)) {
       case paths.about:
-        return 'About me';
+        return 'About Me';
       case paths.contactMe:
-        return 'Contact information';
+        return 'Contact Information';
       case paths.projectsPaths.overview:
-        return 'My portfolio projects';
+        return 'Projects Overview';
       case paths.projectsPaths.previousPortfolio:
-        return 'My previous portfolio';
+        return 'My Previous Portfolio';
       case paths.projectsPaths.budget:
-        return 'Budget app';
+        return 'Budget App';
       case paths.base:
       case paths.home:
-        return 'Hello and welcome to my website!';
+        return 'Hello and Welcome to My Website!';
       default:
         return 'Hmm...';
     }

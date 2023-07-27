@@ -12,8 +12,8 @@ function HomePage() {
 
   return (
     <StyledSpace direction="vertical" size="middle" align="center">
-      <Title level={1} children="Hello! I'm Martyna, React developer" />
-      <Title level={2} children="Welcome to my portfolio website!" />
+      <Title level={1} children="Hello! I'm Martyna, React Developer" />
+      <Title level={2} children="Welcome to My Portfolio Website!" />
 
       <Card width={md ? '700px' : '300px'}>
         <Space
