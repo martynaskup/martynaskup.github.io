@@ -23,8 +23,9 @@ function OverviewInfoCard() {
               working as a front-end developer."
             />
             <Text
-              children="To explore the projects, please go to the Menu, navigate to the
-              Projects submenu, and choose which project you would like to view."
+              children="To explore the projects, you have two options: either use the dots
+              at the top of the page to navigate to a specific slide, or access the Menu,
+              go to the Projects submenu, and choose the project you would like to view"
             />
           </Space>
         }
