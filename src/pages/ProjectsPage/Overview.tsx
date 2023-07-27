@@ -3,12 +3,16 @@ import ProjectPlaceholderInfoCard from './InfoCards/ProjectPlaceholderInfoCard';
 import BudgetInfoCard from './InfoCards/BudgetInfoCard';
 import OverviewInfoCard from './InfoCards/OverviewInfoCard';
 import PreviousPortfolioInfoCard from './InfoCards/PreviousPortfolioInfoCard';
+import NewPortfolioInfoCard from './InfoCards/NewPortfolioInfoCard';
 
 function Overview() {
   return (
     <StyledCarousel dotPosition="top" dots={true}>
-      <div style={{ margin: '50px auto 24px' }}>
+      <div>
         <OverviewInfoCard />
+      </div>
+      <div>
+        <NewPortfolioInfoCard />
       </div>
       <div>
         <PreviousPortfolioInfoCard />
