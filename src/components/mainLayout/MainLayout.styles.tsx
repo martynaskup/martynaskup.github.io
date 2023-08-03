@@ -16,7 +16,7 @@ export const StyledMenuFoldingButton = styled(Button)`
 
 export const StyledSiderLogoSpace = styled(Space)`
   margin: 8px;
-  padding: 16px 16px;
+  padding: 8px 8px;
   background: rgba(255, 255, 255, 0.1);
 
   .ant-typography {

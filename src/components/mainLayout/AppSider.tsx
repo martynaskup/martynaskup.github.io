@@ -38,14 +38,14 @@ function AppSider() {
         }
       }}
     >
-      <StyledSiderLogoSpace>
-        <Avatar alt="profile picture" size="large" src={profilePic} />
+      <StyledSiderLogoSpace size="large">
+        <Avatar alt="profile picture" size={60} src={profilePic} />
         <Text
           children={
             <>
-              I'm Martyna
+              I'm Martyna,
               <br />
-              React Developer
+              Front-end Developer
             </>
           }
         />
