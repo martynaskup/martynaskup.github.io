@@ -5,20 +5,29 @@ import {
   StyledMenuFoldingButton,
 } from './MainLayout.styles';
 import AppHeaderText from './AppHeaderText';
+import { useContext } from 'react';
+import {
+  SiderCollapseContext,
+  SiderCollapseType,
+} from './SiderCollapseContext';
 
-type AppHeaderProps = {
-  collapsed: boolean;
-  onMenuOpenerClick: () => void;
-};
+function AppHeader() {
+  const { collapsed, setCollapsed, setCollapseType } = useContext(
+    SiderCollapseContext
+  ) as SiderCollapseType;
 
-function AppHeader({ collapsed, onMenuOpenerClick }: AppHeaderProps) {
+  function handleClick() {
+    setCollapsed(!collapsed);
+    setCollapseType('clickTrigger');
+  }
+
   return (
     <StyledAppHeaderLayout>
       <Space align="baseline">
         <StyledMenuFoldingButton
           type="text"
           icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-          onClick={onMenuOpenerClick}
+          onClick={handleClick}
         />
         <AppHeaderText />
       </Space>

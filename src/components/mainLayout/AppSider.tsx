@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Avatar, Layout } from 'antd';
 import AppMenu from './AppMenu';
 import { CollapseType } from 'antd/es/layout/Sider';
 import profilePic from '../../assets/images/profilePicture.jpeg';
 import { StyledSiderLogoSpace } from './MainLayout.styles';
 import Text from '../shared/Text';
+import {
+  SiderCollapseContext,
+  SiderCollapseType,
+} from './SiderCollapseContext';
 
-type AppSiderProps = {
-  collapsed: boolean;
-  collapseType: CollapseType | undefined;
-  onCollapse: (
+function AppSider() {
+  const { collapsed, setCollapsed, collapseType, setCollapseType } = useContext(
+    SiderCollapseContext
+  ) as SiderCollapseType;
+
+  function handleCollapse(
     shouldCollapse: boolean,
     collapseType: CollapseType | undefined
-  ) => void;
-};
+  ) {
+    setCollapsed(shouldCollapse);
+    setCollapseType(collapseType);
+  }
 
-function AppSider({ collapsed, collapseType, onCollapse }: AppSiderProps) {
   return (
     <Layout.Sider
       breakpoint="lg"
@@ -25,9 +32,9 @@ function AppSider({ collapsed, collapseType, onCollapse }: AppSiderProps) {
       trigger={null}
       onBreakpoint={(broken) => {
         if (collapsed && collapseType !== 'responsive') {
-          onCollapse(collapsed, collapseType);
+          handleCollapse(collapsed, collapseType);
         } else {
-          onCollapse(broken, 'responsive');
+          handleCollapse(broken, 'responsive');
         }
       }}
     >
